@@ -33,8 +33,8 @@
 						</div>
 						<div class="panel-body">
 							<table class="table table-striped table-bordered">
-                <tr><td><a href="http://localhost/webscraper/main_menu.php">All Animals</a></td></tr>
-								<tr><td><a href="http://localhost/webscraper/fact_menu.php">Fact Animals</a></td></tr>
+                <tr><td><a href="get_link.php">All Animals</a></td></tr>
+								<tr><td><a href="get_fact.php">Fact Animals</a></td></tr>
 							</table>
 						</div>
 					</div>

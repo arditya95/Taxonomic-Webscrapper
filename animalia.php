@@ -40,16 +40,6 @@
                      ?>
                </tbody>
             </table>
-            <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> // JQuery Reference
-            <script src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
-            <script src="https://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/jqueryui/dataTables.jqueryui.js"></script>
-            <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
-            <link rel="stylesheet" href="https://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/jqueryui/dataTables.jqueryui.css">
-               <script>
-                  $(function(){
-                   $("#example").dataTable();
-                  })
-               </script>
             <!-- END -->
          </div>
       <?php include 'template/script.php'; ?>
