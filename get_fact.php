@@ -12,7 +12,7 @@
       Include "koneksi.php";
       include("simple_html_dom.php");
 
-      $pilih = "SELECT * FROM tb_test WHERE id = 5";
+      $pilih = "SELECT * FROM tb_test WHERE id = 4";
       $hasil = mysqli_query($con,$pilih);
       while ($row = mysqli_fetch_array($hasil))
        {
