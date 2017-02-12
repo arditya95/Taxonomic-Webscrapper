@@ -12,9 +12,9 @@
             <!-- START -->
             <table id="example" class="table table-striped table-bordered table-hover">
                <tbody class="table table-striped table-bordered table-hover">
-                  <th style="text-align:center;" class="text-uppercase">Label</th>
-                  <th style="text-align:center;" class="text-uppercase">ID</th>
+                  <th style="text-align:center;" class="text-uppercase">No</th>
                   <th style="text-align:center;" class="text-uppercase">Link</th>
+                  <th style="text-align:center;" class="text-uppercase">Status</th>
                     <?php
                       include 'koneksi.php';
                       $query = "SELECT * FROM tb_test";

@@ -17,15 +17,19 @@
       while ($row = mysqli_fetch_array($hasil))
        {
          $html = file_get_html($row['info']);
-         foreach($html->find('table.article_facts td') as $e)
+         foreach($html->find('table.az-facts td') as $e)
            {
-            //  echo $e->innertext . '<br>';
             $inputhasil = $e->innertext;
-            $inputquery = "INSERT INTO tmp (isi) VALUES ('$inputhasil')";
-            mysqli_query($con,$inputquery);
+            //echo $inputhasil;
+              if($inputhasil == "<div><!-- --></div>"){
+                echo "Putus";
+              }
+            //$inputquery = "INSERT INTO tmp (isi) VALUES ('$inputhasil')";
+            //mysqli_query($con,$inputquery);
+            // var_dump($inputhasil);
            }
-           $query = "UPDATE tb_test SET label=1 WHERE id=$row[id]";
-           mysqli_query($con,$query);
+           //$query = "UPDATE tb_test SET label=1 WHERE id=$row[id]";
+           //mysqli_query($con,$query);
        }
        echo "SELESAI";
      ?>
