@@ -43,5 +43,6 @@
             <!-- END -->
          </div>
       <?php include 'template/script.php'; ?>
+      <?php include 'template/footer.php'; ?>
    </body>
 </html>
