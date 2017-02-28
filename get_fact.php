@@ -20,9 +20,9 @@
          foreach($html->find('table.az-facts td') as $e)
            {
             $inputhasil = $e->innertext;
-            //echo $inputhasil;
-              if($inputhasil == "<div><!-- --></div>"){
-                echo "Putus";
+            echo $inputhasil;
+              //if($inputhasil == "<div><!-- --></div>"){
+                //echo "Putus";
               }
             //$inputquery = "INSERT INTO tmp (isi) VALUES ('$inputhasil')";
             //mysqli_query($con,$inputquery);
@@ -30,7 +30,6 @@
            }
            //$query = "UPDATE tb_test SET label=1 WHERE id=$row[id]";
            //mysqli_query($con,$query);
-       }
        echo "SELESAI";
      ?>
      </div>

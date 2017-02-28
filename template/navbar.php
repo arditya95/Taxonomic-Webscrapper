@@ -13,8 +13,8 @@
 
             <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown">
-                    <a href="settings.php">
-                        <i class="fa fa-cogs fa-fw"></i>  Settings
+                    <a href="login.php">
+                        <i class="fa fa-cogs fa-fw"></i>  Login
                     </a>
                 </li>
                 <!-- /.dropdown -->
