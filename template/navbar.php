@@ -28,17 +28,20 @@
                             <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
 
-                        <li>
+                        <!-- <li>
                             <a href="#"><i class="fa fa-cloud"></i> Sync Data<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="export_csv.php"><i class="fa fa-cloud-upload"></i> Manual Export</a>
+                                    <a href="#"><i class="fa fa-cloud-upload"></i> Manual Export</a>
                                 </li>
                                 <li>
-                                    <a href="import_csv.php"><i class="fa fa-cloud-download"></i> Manual Import</a>
+                                    <a href="#"><i class="fa fa-cloud-download"></i> Manual Import</a>
                                 </li>
                             </ul>
-                            <!-- /.nav-second-level -->
+                        </li> -->
+
+                        <li>
+                            <a href="link.php"><i class="fa fa-link"></i> Web Link</a>
                         </li>
 
                         <li>
@@ -51,21 +54,19 @@
                                     <a href="plantae.php"><i class="fa fa-table"></i> Data Plantae</a>
                                 </li>
                             </ul>
-                            <!-- /.nav-second-level -->
                         </li>
 
-                        <li>
+                        <!-- <li>
                             <a href="#"><i class="fa fa-history"></i> Data History<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="exporthistory.php"><i class="fa fa-history"></i> History Export</a>
+                                    <a href="#"><i class="fa fa-history"></i> History Export</a>
                                 </li>
                                 <li>
-                                    <a href="importhistory.php"><i class="fa fa-history"></i> History Import</a>
+                                    <a href="#.php"><i class="fa fa-history"></i> History Import</a>
                                 </li>
                             </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
+                        </li> -->
 
                     </ul>
                 </div>

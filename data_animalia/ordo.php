@@ -1,13 +1,13 @@
 <!-- Animalia -->
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <label>Species</label>
+    <label>Ordo</label>
   </div>
   <div class="panel-body">
       <table id="example" class="table table-striped table-bordered table-hover">
           <tbody class="table table-striped table-bordered table-hover">
             <th style="text-align:center;" class="text-uppercase">No</th>
-            <th style="text-align:center;" class="text-uppercase">Species</th>
+            <th style="text-align:center;" class="text-uppercase">Ordo</th>
             <?php
               include 'koneksi.php';
               $no=1;
@@ -32,7 +32,7 @@
                 echo '
                 <tr>
                    <td style="text-align:center;" >'.$no.'</td>
-                   <td style="text-align:center;">'.$row['species'].'</td>
+                   <td style="text-align:center;">'.$row['ordo'].'</td>
                 </tr>
                 ';
                 $no++;

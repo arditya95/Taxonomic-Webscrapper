@@ -1,148 +1,208 @@
 <html lang="en">
 
 <head>
-
 	<title>Taxonomic Data Grabbing</title>
-
 	<?php include 'template/head.php'; ?>
-
 </head>
 
 <body>
-
 	<div id="wrapper">
-
 		<?php include 'template/navbar.php'; ?>
-
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
 					<h1 class="page-header"><i class="fa fa-dashboard"></i> Dashboard</h1>
 				</div>
 			</div>
-			<!-- /.row -->
-			<form class="form-horizontal" action="action/weboption.php" method="post">
-		    <div class="row">
+			<!-- Pilih Website -->
+				<div class="row">
+					<!-- KOLOM 1 -->
 		      <div class="col-md-6">
 		        <div class="panel panel-primary">
 		          <div class="panel-heading">
 		            <label>Pilih Website</label>
 		          </div>
 		            <div class="panel-body">
-		              <table class="table table-striped table-bordered">
-		                <?php
-		                  Include "koneksi.php";
-		                  $query=("SELECT id, nama FROM tb_web");
-		                  $hasil = mysqli_query($con,$query);
-		                  $select= '<select name="select" class="form-control">';
-		                  while($row=mysqli_fetch_array($hasil))
-		                    {
-		                        $select.='<option value="'.$row['id'].'">'.$row['nama'].'</option>';
-		                    }
-		                  $select.='</select>';
-		                  echo $select;
-		                ?>
-		              </table>
-		              <button type="submit" class="btn btn-primary">Save</button>
+									<form class="form-horizontal" action="action/weboption.php" method="post">
+			              <table class="table table-striped table-bordered">
+			                <?php
+			                  Include "koneksi.php";
+			                  $query=("SELECT id, nama FROM tb_web");
+			                  $hasil = mysqli_query($con,$query);
+			                  $select= '<select name="select" class="form-control">';
+			                  while($row=mysqli_fetch_array($hasil))
+			                    {
+			                        $select.='<option value="'.$row['id'].'">'.$row['nama'].'</option>';
+			                    }
+			                  $select.='</select>';
+			                  echo $select;
+			                ?>
+			              </table>
+			              <button type="submit" class="btn btn-primary">Save</button>
+									</form>
 		            </div>
 		        </div>
 		      </div>
-		    </div>
-		  </form>
-			<!-- /.row -->
+					<!-- /KOLOM 1 -->
+					<!-- KOLOM 2 -->
+					  <div class="col-lg-6">
+					    <div class="panel panel-primary">
+					      <div class="panel-heading">
+					        <label>Progress</label>
+					      </div>
+					      <div class="panel-body">
+					        <form class="form-horizontal" action="#" method="post">
+					          <table id="example" class="table table-striped table-bordered table-hover">
+					              <tbody class="table table-striped table-bordered table-hover">
+					                <th style="text-align:center;" class="text-uppercase">Success</th>
+					                <th style="text-align:center;" class="text-uppercase">Error</th>
+					                <th style="text-align:center;" class="text-uppercase">Pending</th>
+					              </tbody>
+					          </table>
+					          <div id="progress" class = "progress progress-striped active">
+					             <div id="bar" class = "progress-bar progress-bar-success" role = "progressbar"
+					             aria-valuenow = "60" aria-valuemin = "0" aria-valuemax = "100" style = "width: 0%;">
+					                <!-- <span class = "sr-only">40% Complete</span> -->
+					                <div id="label">
+					                  <!-- 60% Complete -->
+					                </div>
+					             </div>
+					          </div>
+<!-- <button type="button" class="btn btn-primary" onclick="move()">Start</button> -->
+					        </form>
+					      </div>
+					    </div>
+					  </div>
+			<!-- /KOLOM 2 -->
+			<!-- /Pilih Website -->
 			<!-- Animalia -->
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<label>Kingdom Animalia</label>
-				</div>
-				<div class="panel-body">
-						<table id="example" class="table table-striped table-bordered table-hover">
-								<tbody class="table table-striped table-bordered table-hover">
-									<th style="text-align:center;" class="text-uppercase">Phylum</th>
-									<th style="text-align:center;" class="text-uppercase">Class</th>
-									<th style="text-align:center;" class="text-uppercase">Ordo</th>
-									<th style="text-align:center;" class="text-uppercase">Family</th>
-									<th style="text-align:center;" class="text-uppercase">Genus</th>
-									<th style="text-align:center;" class="text-uppercase">Species</th>
-									<?php
-                    include 'koneksi.php';
-                    $query = "SELECT
-                              (SELECT COUNT(tb_kingdom.`id`) FROM tb_kingdom) AS Kingdom,
-                              (SELECT COUNT(tb_phylum.`phylum`) FROM tb_phylum)AS Phylum,
-                              (SELECT COUNT(tb_class.`class`) FROM tb_class) AS Class,
-                              (SELECT COUNT(tb_order.`ordo`) FROM tb_order) AS Ordo,
-                              (SELECT COUNT(tb_family.`family`) FROM tb_family) AS Family,
-                              (SELECT COUNT(tb_genus.`genus`) FROM tb_genus) AS Genus,
-                              (SELECT COUNT(tb_species.`species`) FROM tb_species) AS Species";
-                    $result = mysqli_query($con,$query);
-                    //var_dump($result);
-                    while ($row = mysqli_fetch_array($result))
-                    {
-                      echo '
-                      <tr>
-                         <td style="text-align:center;">'.$row['Phylum'].'</td>
-                         <td style="text-align:center;">'.$row['Class'].'</td>
-                         <td style="text-align:center;">'.$row['Ordo'].'</td>
-                         <td style="text-align:center;">'.$row['Family'].'</td>
-                         <td style="text-align:center;">'.$row['Genus'].'</td>
-                         <td style="text-align:center;">'.$row['Species'].'</td>
-                      </tr>
-                      ';
-                    }
-                  ?>
-								</tbody>
-						</table>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<label>Kingdom Animalia</label>
+						</div>
+						<div class="panel-body">
+							<form class="form-horizontal" action="#" method="post">
+								<table id="example" class="table table-striped table-bordered table-hover">
+										<tbody class="table table-striped table-bordered table-hover">
+											<th style="text-align:center;" class="text-uppercase">Phylum</th>
+											<th style="text-align:center;" class="text-uppercase">Class</th>
+											<th style="text-align:center;" class="text-uppercase">Ordo</th>
+											<th style="text-align:center;" class="text-uppercase">Family</th>
+											<th style="text-align:center;" class="text-uppercase">Genus</th>
+											<th style="text-align:center;" class="text-uppercase">Species</th>
+											<?php
+		                    include 'koneksi.php';
+		                    $query = "SELECT
+		                              (SELECT COUNT(tb_kingdom.`kingdom`) FROM tb_kingdom) AS Kingdom,
+		                              (SELECT COUNT(tb_phylum.`phylum`) FROM tb_phylum)AS Phylum,
+		                              (SELECT COUNT(tb_class.`class`) FROM tb_class) AS Class,
+		                              (SELECT COUNT(tb_order.`ordo`) FROM tb_order) AS Ordo,
+		                              (SELECT COUNT(tb_family.`family`) FROM tb_family) AS Family,
+		                              (SELECT COUNT(tb_genus.`genus`) FROM tb_genus) AS Genus,
+		                              (SELECT COUNT(tb_species.`species`) FROM tb_species) AS Species";
+		                    $result = mysqli_query($con,$query);
+		                    //var_dump($result);
+		                    while ($row = mysqli_fetch_array($result))
+		                    {
+		                      echo '
+		                      <tr>
+		                         <td style="text-align:center;">'.$row['Phylum'].'</td>
+		                         <td style="text-align:center;">'.$row['Class'].'</td>
+		                         <td style="text-align:center;">'.$row['Ordo'].'</td>
+		                         <td style="text-align:center;">'.$row['Family'].'</td>
+		                         <td style="text-align:center;">'.$row['Genus'].'</td>
+		                         <td style="text-align:center;">'.$row['Species'].'</td>
+		                      </tr>
+		                      ';
+		                    }
+		                  ?>
+										</tbody>
+								</table>
+							</form>
+						</div>
+					</div>
 				</div>
 			</div>
-			<!-- Animalia -->
+			<!-- /Animalia -->
 			<!-- Plantae -->
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<label>Kingdom Plantae</label>
-				</div>
-				<div class="panel-body">
-						<table id="example" class="table table-striped table-bordered table-hover">
-								<tbody class="table table-striped table-bordered table-hover">
-									<th style="text-align:center;" class="text-uppercase">Phylum</th>
-									<th style="text-align:center;" class="text-uppercase">Class</th>
-									<th style="text-align:center;" class="text-uppercase">Ordo</th>
-									<th style="text-align:center;" class="text-uppercase">Family</th>
-									<th style="text-align:center;" class="text-uppercase">Genus</th>
-									<th style="text-align:center;" class="text-uppercase">Species</th>
-									<?php
-                    include 'koneksi.php';
-                    $query = "SELECT
-                              (SELECT COUNT(tb_kingdom.`id`) FROM tb_kingdom) AS Kingdom,
-                              (SELECT COUNT(tb_phylum.`phylum`) FROM tb_phylum)AS Phylum,
-                              (SELECT COUNT(tb_class.`class`) FROM tb_class) AS Class,
-                              (SELECT COUNT(tb_order.`ordo`) FROM tb_order) AS Ordo,
-                              (SELECT COUNT(tb_family.`family`) FROM tb_family) AS Family,
-                              (SELECT COUNT(tb_genus.`genus`) FROM tb_genus) AS Genus,
-                              (SELECT COUNT(tb_species.`species`) FROM tb_species) AS Species";
-                    $result = mysqli_query($con,$query);
-                    //var_dump($result);
-                    while ($row = mysqli_fetch_array($result))
-                    {
-                      echo '
-                      <tr>
-                         <td style="text-align:center;">'.$row['Phylum'].'</td>
-                         <td style="text-align:center;">'.$row['Class'].'</td>
-                         <td style="text-align:center;">'.$row['Ordo'].'</td>
-                         <td style="text-align:center;">'.$row['Family'].'</td>
-                         <td style="text-align:center;">'.$row['Genus'].'</td>
-                         <td style="text-align:center;">'.$row['Species'].'</td>
-                      </tr>
-                      ';
-                    }
-                  ?>
-								</tbody>
-						</table>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<label>Kingdom Plantae</label>
+						</div>
+						<div class="panel-body">
+							<form class="form-horizontal" action="#" method="post">
+								<table id="example" class="table table-striped table-bordered table-hover">
+										<tbody class="table table-striped table-bordered table-hover">
+											<th style="text-align:center;" class="text-uppercase">Phylum</th>
+											<th style="text-align:center;" class="text-uppercase">Class</th>
+											<th style="text-align:center;" class="text-uppercase">Ordo</th>
+											<th style="text-align:center;" class="text-uppercase">Family</th>
+											<th style="text-align:center;" class="text-uppercase">Genus</th>
+											<th style="text-align:center;" class="text-uppercase">Species</th>
+											<?php
+		                    include 'koneksi.php';
+		                    $query = "SELECT
+		                              (SELECT COUNT(tb_kingdom.`kingdom`) FROM tb_kingdom) AS Kingdom,
+		                              (SELECT COUNT(tb_phylum.`phylum`) FROM tb_phylum)AS Phylum,
+		                              (SELECT COUNT(tb_class.`class`) FROM tb_class) AS Class,
+		                              (SELECT COUNT(tb_order.`ordo`) FROM tb_order) AS Ordo,
+		                              (SELECT COUNT(tb_family.`family`) FROM tb_family) AS Family,
+		                              (SELECT COUNT(tb_genus.`genus`) FROM tb_genus) AS Genus,
+		                              (SELECT COUNT(tb_species.`species`) FROM tb_species) AS Species";
+		                    $result = mysqli_query($con,$query);
+		                    //var_dump($result);
+		                    while ($row = mysqli_fetch_array($result))
+		                    {
+		                      echo '
+		                      <tr>
+		                         <td style="text-align:center;">'.$row['Phylum'].'</td>
+		                         <td style="text-align:center;">'.$row['Class'].'</td>
+		                         <td style="text-align:center;">'.$row['Ordo'].'</td>
+		                         <td style="text-align:center;">'.$row['Family'].'</td>
+		                         <td style="text-align:center;">'.$row['Genus'].'</td>
+		                         <td style="text-align:center;">'.$row['Species'].'</td>
+		                      </tr>
+		                      ';
+		                    }
+		                  ?>
+										</tbody>
+								</table>
+							</form>
+						</div>
+					</div>
 				</div>
 			</div>
-			<!-- Plantae -->
+			<!-- /Plantae -->
 		</div>
+</div>
+</div>
+
+		<script type="text/javascript">
+		function move()
+		  {
+		    var elem = document.getElementById("bar");
+		    var width = 10;
+		    var id = setInterval(frame, 60);
+		    function frame()
+		    {
+		      if (width >= 100)
+		        {
+		            clearInterval(id);
+		        }
+		      else
+		        {
+		            width++;
+		            elem.style.width = width + '%';
+		            document.getElementById("label").innerHTML = width * 1 + '%';
+		        }
+		    }
+		  }
+		</script>
 		<?php include 'template/script.php'; ?>
 		<?php include 'template/footer.php'; ?>
 	</body>
-
-	</html>
+</html>

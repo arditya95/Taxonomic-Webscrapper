@@ -2,6 +2,7 @@
 terhadap seluruh data link dari hewan yang ada -->
 
 <?php
+set_time_limit(0);
 // Include the library
 include("simple_html_dom.php");
 Include "koneksi.php";

@@ -32,7 +32,7 @@
                         echo '
                         <tr>
                            <td style="text-align:center;">'.$row['id'].'</td>
-                           <td>'.$row['info'].'</td>
+                           <td> <a href="'.$row['info'].'">'.$row['info'].'</a></td>
                            <td class="'.$warna.'" style="text-align:center;">'.$flag.'</td>
                         </tr>
                         ';
