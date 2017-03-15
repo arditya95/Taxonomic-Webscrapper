@@ -34,7 +34,7 @@
     <li><a href="manual_api.htm">API Reference</a></li>
     <li><a href="manual_faq.htm">FAQ</a></li>
   </ul>
-	
+
 	<a name="section_quickstart"></a>
   <h2>Quick Start</h2>
   <a class="top" href="#top">Top</a>
@@ -64,7 +64,7 @@ foreach($html-&gt;<strong>find</strong>(<span class="var">'a'</span>) as $elemen
         $html = <strong>str_get_html</strong>(<span class="var">'&lt;div id=&quot;hello&quot;&gt;Hello&lt;/div&gt;&lt;div id=&quot;world&quot;&gt;World&lt;/div&gt;'</span>);<span class="comment"><br>
         <br>
         </span>
-        
+
 $html-&gt;<strong>find</strong>(<span class="var">'div', 1</span>)-&gt;<strong>class</strong> = <span class="var">'bar'</span>;<br>
 <br>
 $html-&gt;<strong>find</strong>(<span class="var">'div[id=hello]', 0</span>)-&gt;<strong>innertext</strong> = <span class="var">'foo'</span>;<br>
@@ -96,7 +96,7 @@ $html-&gt;<strong>find</strong>(<span class="var">'div[id=hello]', 0</span>)-&gt
       </div>
     </div>
   </div>
-	
+
   <a name="section_create"></a>
   <h2>How to create HTML DOM object?</h2>
   <a class="top" href="#top">Top</a>
@@ -153,7 +153,7 @@ $html-&gt;<strong>find</strong>(<span class="var">'div[id=hello]', 0</span>)-&gt
 $ret = $html-&gt;find(<span class="var">'<strong>a</strong>', <strong>-1</strong></span>);        <br>
         <br>
         <span class="comment">// Find all <strong>&lt;div&gt;</strong> with the <strong>id</strong> attribute</span><br>
-$ret = $html-&gt;find(<span class="var">'<strong>div[id]</strong>'</span>);<br>        
+$ret = $html-&gt;find(<span class="var">'<strong>div[id]</strong>'</span>);<br>
 <br>
         <span class="comment">// Find all <strong>&lt;div&gt;</strong> which attribute <strong>id=foo</strong></span><br>
 $ret = $html-&gt;find(<span class="var">'<strong>div[id=foo]</strong>'</span>);        <br>
@@ -163,8 +163,8 @@ $ret = $html-&gt;find(<span class="var">'<strong>div[id=foo]</strong>'</span>); 
       <div class="code"><span class="comment">// Find all element which <strong>id</strong>=foo</span><br>
         $ret = $html-&gt;find(<span class="var">'<strong>#foo</strong>'</span>);<br>
         <br>
-        <span class=comment>// Find all element which <strong>class</strong>=foo</span><br>
-        $ret = $html-&gt;find(<span class=var>'<strong>.foo</strong>'</span>);<br>
+        <span class="comment">// Find all element which <strong>class</strong>=foo</span><br>
+        $ret = $html-&gt;find(<span class="var">'<strong>.foo</strong>'</span>);<br>
         <br>
         <span class="comment">// Find all element has attribute<strong> id</strong></span><br>
 $ret = $html-&gt;find(<span class="var">'<strong>*[id]</strong>'</span>);        <br>
@@ -262,7 +262,7 @@ $ret = $html-&gt;find(<span class="var">'<strong>a, img</strong>'</span>);      
       <li><a href="#frag_access_tips"><span>Tips</span></a></li>
     </ul>
     <div id="frag_access_attr">
-      <div class="code"> 
+      <div class="code">
         <span class="comment">// <strong>Get</strong> a attribute ( If the attribute is <strong>non-value</strong> attribute (eg. checked, selected...), it will returns <strong>true</strong> or <strong>false</strong>)</span><br>
         $value = $e-&gt;<strong>href</strong>;<br>
         <br>
@@ -315,7 +315,7 @@ if(isset($e-&gt;<strong>href</strong>)) <br>
     <div id="frag_access_tips">
       <div class="code"><span class="comment">// <strong>Extract</strong> contents from HTML </span><br>
 echo <strong>$html</strong>-&gt;<strong>plaintext</strong>;<br>
-<br> 
+<br>
 <span class="comment">
         // <strong>Wrap</strong> a element</span><br>
         $e-&gt;<strong>outertext</strong> = <span class="var">'&lt;div class=&quot;wrap&quot;&gt;'</span> . $e-&gt;<strong>outertext</strong> . <span class="var">'&lt;div&gt;</span>';<br>
@@ -387,7 +387,7 @@ $e-&gt;<strong>outertext</strong> = <span class="var">'&lt;div&gt;foo</span><spa
         </table>
       </div>
     </div>
-    
+
   </div>
   <a name="section_dump"></a>
   <h2>How to dump contents of DOM object?</h2>
@@ -424,7 +424,7 @@ $e-&gt;<strong>outertext</strong> = <span class="var">'&lt;div&gt;foo</span><spa
       <div class="code"><span class="comment">// Write a function with parameter &quot;<strong>$element</strong>&quot;</span><br>
         function my_callback(<span class="var">$element</span>) {<br>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Hide all &lt;b&gt; tags </span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ($element-&gt;tag==<span class="var">'b'</span>)<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ($element-&gt;tag==<span class="var">'b'</span>)<br>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$element-&gt;outertext = '';<br>
         } <br>
         <br>

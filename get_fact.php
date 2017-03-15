@@ -21,20 +21,54 @@
          foreach($html->find('table.az-facts td') as $e)
            {
             $inputhasil = $e->innertext;
-            $html2= str_get_html( $inputhasil);
-            $a= $html2->find('a',0);
+            $url="http://stackoverflow.com/questions/2280394/how-can-i-check-if-a-url-exists-via-php";
+            $html2= str_get_html($inputhasil);
+            $a= $html2->find('a',0)->innertext;
 
-            echo $a;
-             //echo $inputhasil."<br>";
-              if($inputhasil == "<div><!-- --></div>")
+            // $html3= str_get_html($inputhasil);
+            // $b= $html3->find('text',0)->plaintext;
+            // print_r($b);
+
+            // echo $inputhasil . "<br>";
+            // var_dump($inputhasil);
+            if ($a!=null)
               {
-                //echo "Putus";
+                $querya = "INSERT INTO tmp (th) VALUES ('$a')";
+                mysqli_query($con,$querya);
+                $last_id = mysqli_insert_id($con);
+                $updatecount=0;
+                // echo $last_id . " INI LAST ID". "<br>";
+                // var_dump($querya);
+                // break;
               }
-            $inputquery = "INSERT INTO tmp (isi) VALUES ('$inputhasil')";
-            echo $inputquery;
-            break;
-            mysqli_query($con,$inputquery);
-            //var_dump($inputhasil);
+              elseif($inputhasil!='<div><!-- --></div>'){
+                if ($updatecount!=1) {
+                  $queryb = "UPDATE tmp SET td='$inputhasil' WHERE id=$last_id";
+                  mysqli_query($con,$queryb);
+                  $updatecount++;
+                  // echo $inputhasil ."<br>";
+                }
+                // var_dump($queryb);
+                // break;
+              }
+
+            // echo $a ."<br>";
+            // break;
+            // var_dump($inputhasil);
+            // echo $inputhasil."<br>";
+            //  break;
+              // if($a != null)
+              // {
+              //   // $inputquery = "INSERT INTO tmp (th,td) VALUES ('$a','$inputhasil')";
+              //   // // mysqli_query($con,$inputquery);
+              //   // var_dump($inputquery);
+              //   // break;
+              // }
+            // $inputquery = "INSERT INTO tmp (isi) VALUES ('$inputhasil')";
+            // echo $inputquery;
+            // break;
+            // mysqli_query($con,$inputquery);
+            // var_dump($inputhasil);
             // exit;
            }
           //  $query = "UPDATE tb_test SET label=1 WHERE id=$row[id]";
