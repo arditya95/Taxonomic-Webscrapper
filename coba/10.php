@@ -11,17 +11,19 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script type="text/javascript">
-      $(document).ready(function() {
-        $('#box').load('data.php', function(response, status,xhr) {
-          if (status==='success') {
-            console.log('Berhasill!');
-          }else {
-            console.log('Gagal');
-          }
+
+
+      setInterval(function(){
+        $(document).ready(function() {
+          $('#box').load('data.php', function(response, status,xhr) {
+            if (status==='success') {
+              console.log('Berhasill!');
+            }else {
+              console.log('Gagal');
+            }
+          });
         });
-      });
-
-
+      }, 5000);
     </script>
   </body>
 </html>
