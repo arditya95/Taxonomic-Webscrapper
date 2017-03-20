@@ -22,23 +22,18 @@ include 'koneksi.php';
 
 $q = intval($_GET['q']);
 
-$sql="SELECT * FROM tb_login WHERE id = '".$q."'";
+$sql="SELECT * FROM tb_web WHERE id = '".$q."'";
 $result = mysqli_query($con,$sql);
 
-echo "<table>
-<tr>
-<th>ID</th>
-<th>User Name</th>
-<th>Password</th>
-</tr>";
 while($row = mysqli_fetch_array($result)) {
-    echo "<tr>";
-    echo "<td>" . $row['id'] . "</td>";
-    echo "<td>" . $row['username'] . "</td>";
-    echo "<td>" . $row['password'] . "</td>";
-    echo "</tr>";
+    echo "<b>" . $row['nama'] . " telah di pilih" . "</b>" ;
+    $sqlup="UPDATE tb_web SET label=0 WHERE id!=$row[id]";
+    $sqlup2="UPDATE tb_web SET label=1 WHERE id=$row[id]";
+
+    $hasilup = mysqli_query($con,$sqlup);
+    $hasilup2 = mysqli_query($con,$sqlup2);
+    //var_dump($sqlup);
 }
-echo "</table>";
 mysqli_close($con);
 ?>
 </body>

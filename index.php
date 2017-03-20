@@ -3,6 +3,29 @@
 <head>
 	<title>Taxonomic Data Grabbing</title>
 	<?php include 'template/head.php'; ?>
+	<script>
+	function showUser(str) {
+	   if (str == "") {
+	       document.getElementById("txtHint").innerHTML = "";
+	       return;
+	   } else {
+	       if (window.XMLHttpRequest) {
+	           // code for IE7+, Firefox, Chrome, Opera, Safari
+	           xmlhttp = new XMLHttpRequest();
+	       } else {
+	           // code for IE6, IE5
+	           xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	       }
+	       xmlhttp.onreadystatechange = function() {
+	           if (this.readyState == 4 && this.status == 200) {
+	               document.getElementById("txtHint").innerHTML = this.responseText;
+	           }
+	       };
+	       xmlhttp.open("GET","ajax_web.php?q="+str,true);
+	       xmlhttp.send();
+	   }
+	}
+	</script>
 </head>
 
 <body>
@@ -29,16 +52,17 @@
 			                  Include "koneksi.php";
 			                  $query=("SELECT id, nama FROM tb_web");
 			                  $hasil = mysqli_query($con,$query);
-			                  $select= '<select name="select" class="form-control">';
+			                  $select= '<select name="website" class="form-control" onchange="showUser(this.value)">';
 			                  while($row=mysqli_fetch_array($hasil))
 			                    {
-			                        $select.='<option value="'.$row['id'].'">'.$row['nama'].'</option>';
+			                        $select.='<option selected="selected" value="'.$row['id'].'">'.$row['nama'].'</option>';
 			                    }
 			                  $select.='</select>';
 			                  echo $select;
 			                ?>
+											<div id="txtHint"></div>
 			              </table>
-			              <button type="submit" class="btn btn-primary">Save</button>
+			              <!-- <button type="submit" class="btn btn-primary disabled">Save</button> -->
 									</form>
 		            </div>
 		        </div>
