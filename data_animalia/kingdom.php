@@ -23,7 +23,8 @@
                         INNER JOIN tb_genus
                         ON tb_genus.`id_family` = tb_family.`id_family`
                         INNER JOIN tb_species
-                        ON tb_species.`id_genus` = tb_genus.`id_genus`;";
+                        ON tb_species.`id_genus` = tb_genus.`id_genus`
+                        GROUP BY kingdom;";
               $result = mysqli_query($con,$query);
               //var_dump($result);
               while ($row = mysqli_fetch_array($result))

@@ -24,7 +24,7 @@
                         ON tb_class.`id_phylum` = tb_phylum.`id_phylum`
                         INNER JOIN tb_kingdom
                         ON tb_phylum.`id_kingdom` = tb_kingdom.`id_kingdom`
-                        WHERE tb_kingdom.`id_kingdom`=1;";
+                        GROUP BY class;";
               $result = mysqli_query($con,$query);
               //var_dump($result);
               while ($row = mysqli_fetch_array($result))

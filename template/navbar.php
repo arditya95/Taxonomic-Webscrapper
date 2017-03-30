@@ -11,12 +11,12 @@
             </div>
             <!-- /.navbar-header -->
 
-            <ul class="nav navbar-top-links navbar-right">
+            <!-- <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown">
                     <a href="login.php">
                         <i class="fa fa-cogs fa-fw"></i>  Login
                     </a>
-                </li>
+                </li> -->
                 <!-- /.dropdown -->
             </ul>
             <!-- /.navbar-top-links -->
@@ -48,11 +48,11 @@
                             <a href="#"><i class="fa fa-table"></i> Master Data<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="animalia.php"><i class="fa fa-table"></i> Data Animalia</a>
+                                    <a href="/webscraper/data_animalia/index.php"><i class="fa fa-table"></i> Data Animalia</a>
                                 </li>
-                                <li>
-                                    <a href="plantae.php"><i class="fa fa-table"></i> Data Plantae</a>
-                                </li>
+                                <!-- <li>
+                                    <a href="#"><i class="fa fa-table"></i> Data Plantae</a>
+                                </li> -->
                             </ul>
                         </li>
 
