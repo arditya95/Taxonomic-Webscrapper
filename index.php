@@ -119,13 +119,13 @@
 											<?php
 		                    include 'koneksi.php';
 		                    $query = "SELECT
-		                              (SELECT COUNT(DISTINCT tb_kingdom.`kingdom`) FROM tb_kingdom) AS Kingdom,
-		                              (SELECT COUNT(DISTINCT tb_phylum.`phylum`) FROM tb_phylum)AS Phylum,
-		                              (SELECT COUNT(DISTINCT tb_class.`class`) FROM tb_class) AS Class,
-		                              (SELECT COUNT(DISTINCT tb_order.`ordo`) FROM tb_order) AS Ordo,
-		                              (SELECT COUNT(DISTINCT tb_family.`family`) FROM tb_family) AS Family,
-		                              (SELECT COUNT(DISTINCT tb_genus.`genus`) FROM tb_genus) AS Genus,
-		                              (SELECT COUNT(DISTINCT tb_species.`species`) FROM tb_species) AS Species";
+		                              (SELECT COUNT(DISTINCT tb_kingdom.`nama_kingdom`) FROM tb_kingdom) AS Kingdom,
+		                              (SELECT COUNT(DISTINCT tb_phylum.`nama_phylum`) FROM tb_phylum)AS Phylum,
+		                              (SELECT COUNT(DISTINCT tb_class.`nama_class`) FROM tb_class) AS Class,
+		                              (SELECT COUNT(DISTINCT tb_ordo.`nama_ordo`) FROM tb_ordo) AS Ordo,
+		                              (SELECT COUNT(DISTINCT tb_family.`nama_family`) FROM tb_family) AS Family,
+		                              (SELECT COUNT(DISTINCT tb_genus.`nama_genus`) FROM tb_genus) AS Genus,
+		                              (SELECT COUNT(DISTINCT tb_species.`nama_species`) FROM tb_species) AS Species";
 		                    $result = mysqli_query($con,$query);
 		                    //var_dump($result);
 		                    while ($row = mysqli_fetch_array($result))

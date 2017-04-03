@@ -16,15 +16,15 @@
                         ON tb_species.`id_genus` = tb_genus.`id_genus`
                         INNER JOIN tb_family
                         ON tb_genus.`id_family` = tb_family.`id_family`
-                        INNER JOIN tb_order
-                        ON tb_family.`id_order` = tb_order.`id_order`
+                        INNER JOIN tb_ordo
+                        ON tb_family.`id_ordo` = tb_ordo.`id_ordo`
                         INNER JOIN tb_class
-                        ON tb_order.`id_class` = tb_class.`id_class`
+                        ON tb_ordo.`id_class` = tb_class.`id_class`
                         INNER JOIN tb_phylum
                         ON tb_class.`id_phylum` = tb_phylum.`id_phylum`
                         INNER JOIN tb_kingdom
                         ON tb_phylum.`id_kingdom` = tb_kingdom.`id_kingdom`
-                        GROUP BY class;";
+                        GROUP BY nama_class;";
               $result = mysqli_query($con,$query);
               //var_dump($result);
               while ($row = mysqli_fetch_array($result))
@@ -32,7 +32,7 @@
                 echo '
                 <tr>
                    <td style="text-align:center;" >'.$no.'</td>
-                   <td style="text-align:center;">'.$row['class'].'</td>
+                   <td style="text-align:center;">'.$row['nama_class'].'</td>
                 </tr>
                 ';
                 $no++;

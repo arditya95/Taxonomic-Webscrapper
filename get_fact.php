@@ -12,7 +12,7 @@
       Include "koneksi.php";
       include("simple_html_dom.php");
 
-      $pilih = "SELECT * FROM tb_test";
+      $pilih = "SELECT * FROM tb_link";
       $hasil = mysqli_query($con,$pilih);
       while ($row = mysqli_fetch_array($hasil))
        {
@@ -40,7 +40,7 @@
                 }
               }
           }
-           $query = "UPDATE tb_test SET label=1 WHERE id=$row[id]";
+           $query = "UPDATE tb_link SET label=1 WHERE id=$row[id]";
            mysqli_query($con,$query);
         }
     ?>

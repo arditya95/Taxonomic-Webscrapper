@@ -48,7 +48,7 @@
                             <a href="#"><i class="fa fa-table"></i> Master Data<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="/webscraper/data_animalia/index.php"><i class="fa fa-table"></i> Data Animalia</a>
+                                    <a href="data_animalia/index.php"><i class="fa fa-table"></i> Data Animalia</a>
                                 </li>
                                 <!-- <li>
                                     <a href="#"><i class="fa fa-table"></i> Data Plantae</a>

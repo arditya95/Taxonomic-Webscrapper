@@ -2,7 +2,7 @@
 <html lang="en">
    <head>
      <meta charset="utf-8">
-     <title>Animal List</title>
+     <title>Taxonomic Data Grabbing</title>
      <?php include 'template/head.php'; ?>
    </head>
    <body>
@@ -17,7 +17,7 @@
                   <th style="text-align:center;" class="text-uppercase">Status</th>
                     <?php
                       include 'koneksi.php';
-                      $query = "SELECT * FROM tb_test";
+                      $query = "SELECT * FROM tb_link";
                       $result = mysqli_query($con,$query);
                       while ($row = mysqli_fetch_array($result))
                       {

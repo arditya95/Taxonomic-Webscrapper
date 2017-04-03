@@ -16,7 +16,7 @@ foreach($html->find('div[class=az-left-box az-animals-index] a') as $e)
     $hasil = "http://a-z-animals.com" . $e->href;
     $count = $count+1;
     echo $count. " http://a-z-animals.com" . $e->href . '<br>';
-    $query = "INSERT INTO tb_test (info) VALUES ('$hasil')";
+    $query = "INSERT INTO tb_link (info) VALUES ('$hasil')";
     mysqli_query($con,$query);
     //var_dump($hasil);
     }
