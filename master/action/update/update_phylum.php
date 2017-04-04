@@ -4,7 +4,9 @@ if (isset($_POST['submit'])) {
   $nama = $_POST['nama'];
   $deskripsi = $_POST['deskripsi'];
   $golongan = $_POST['golongan'];
-  $sql="INSERT INTO tb_phylum (nama_phylum, deskripsi_phylum, id_kingdom) VALUES ('$nama','$deskripsi', '$golongan');";
+  $id = $_POST['id'];
+  $sql="UPDATE tb_phylum SET nama_phylum = '$nama', deskripsi_phylum = '$deskripsi',
+  id_kingdom = '$golongan' WHERE id_phylum = '$id';";
   mysqli_query($con,$sql);
 }
 ?>

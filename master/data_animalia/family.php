@@ -34,7 +34,8 @@
                 <tr>
                    <td style='text-align:center;' >".$no."</td>
                    <td style='text-align:center;'>".$row['nama_family']."</td>
-                   <td style='text-align:center;'> <a href='update_family.php?id=$row[id_family]'>Edit</a> |
+                   <td style='text-align:center;'>
+                   <a href='..\action\update\Family.php?id=$row[id_family]'>Edit</a> |
                    <a href='..\action\delete\delete_family.php?id=$row[id_family]'>Delete</a></td>
                 </tr>
                 ";

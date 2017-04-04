@@ -16,18 +16,27 @@
         <div class="col-md-6">
           <div class="panel panel-primary">
             <div class="panel-heading">
-              <label>Tambah Family</label>
+              <label>Edit Family</label>
             </div>
+
+            <?php
+              Include "../../../koneksi.php";
+              $sql=("SELECT * FROM tb_family WHERE id_family = '$_GET[id]'");
+              $result = mysqli_query($con,$sql);
+              $baris=mysqli_fetch_array($result);
+            ?>
+
             <div class="panel-body">
-              <form class="form-horizontal" action="insert_family.php" method="post">
+              <form class="form-horizontal" action="update_family.php" method="post">
                 <div class="container-fluid">
                   <div class="form-group">
+                    <input type="hidden" class="form-control" name="id" value="<?php echo $baris['id_family'];?>">
                     <label for="nama">Nama Family</label>
-                    <input type="text" class="form-control" name="nama">
+                    <input type="text" class="form-control" name="nama" value="<?php echo $baris['nama_family'];?>">
                   </div>
                   <div class="form-group">
                     <label for="deskripsi">Deskripsi</label>
-                    <textarea class="form-control" name="deskripsi" rows="8" cols="80"></textarea>
+                    <textarea class="form-control" name="deskripsi" rows="8" cols="80"><?php echo $baris['deskripsi_family'];?></textarea>
                   </div>
                   <div class="form-group">
                     <label for="golongan">Golongan Ordo</label>
@@ -38,7 +47,11 @@
                       $select= '<select name="golongan" class="form-control">';
                       while($row=mysqli_fetch_array($hasil))
                         {
+                          if ($baris['id_ordo']==$row['id_ordo']) {
                             $select.='<option selected="selected" value="'.$row['id_ordo'].'">'.$row['nama_ordo'].'</option>';
+                          }else {
+                            $select.='<option value="'.$row['id_ordo'].'">'.$row['nama_ordo'].'</option>';
+                          }
                         }
                       $select.='</select>';
                       echo $select;

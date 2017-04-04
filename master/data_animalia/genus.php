@@ -34,7 +34,8 @@
                 <tr>
                    <td style='text-align:center;' >".$no."</td>
                    <td style='text-align:center;'>".$row['nama_genus']."</td>
-                   <td style='text-align:center;'> <a href='update_genus.php?id=$row[id_genus]'>Edit</a> |
+                   <td style='text-align:center;'>
+                   <a href='..\action\update\genus.php?id=$row[id_genus]'>Edit</a> |
                    <a href='..\action\delete\delete_genus.php?id=$row[id_genus]'>Delete</a></td>
                 </tr>
                 ";
