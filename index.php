@@ -46,7 +46,7 @@
 		            <label>Pilih Website</label>
 		          </div>
 		            <div class="panel-body">
-									<form class="form-horizontal" action="action/weboption.php" method="post">
+									<form class="form-horizontal" action="#" method="post">
 			              <table class="table table-striped table-bordered">
 			                <?php
 			                  Include "koneksi.php";

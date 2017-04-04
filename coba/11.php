@@ -12,20 +12,27 @@
     while ($row = mysqli_fetch_array($hasil))
     {
         if ($row['th']=="Kingdom"){
-          echo "print row td : ". $row['td'] ."<br>";
-          $sqlcek="SELECT * from tb_kingdom where nama_kingdom='$row[td]'";
-          $hasilcek = mysqli_query($con,$sqlcek);
-          echo "print sql cek : " .$sqlcek . "<br>";
-          $row_coun=mysqli_num_rows($hasilcek);
-          echo "jumlah ROW : ". $row_coun . "<br>";
-          if ($row_coun==1) {
-            $sqlid_kingdom="SELECT id_kingdom FROM tb_kingdom where nama_kingdom='$row[td]'";
-            $hasil_id = mysqli_query($con,$sqlid_kingdom);
-            echo "id yang di ambil : ". $hasil_id. "<br>";
-          }else {
-            $sql = "INSERT INTO tb_kingdom (nama_kingdom) SELECT td FROM tmp WHERE tmp.`id`=$row[id];";
-            echo $sql . "<br>";
-          }
+          $sql_cek_kingdom="SELECT * from tb_kingdom where nama_kingdom='$row[td]'";
+          $hasil_cek_kingdom = mysqli_query($con,$sql_cek_kingdom);
+          $row_coun=mysqli_num_rows($hasil_cek_kingdom);
+          // echo "print row td : ". $row['td'] ."<br>";
+          // echo "print sql cek : " .$sql_cek_kingdom . "<br>";
+          // echo "jumlah ROW : ". $row_coun . "<br>";
+            if ($row_coun==1) {
+              $sql_id_kingdom="SELECT * FROM tb_kingdom where nama_kingdom='$row[td]'";
+              $hasil_id_kingdom = mysqli_query($con,$sql_id_kingdom);
+              // while ($rowid = mysqli_fetch_array($hasil_id_kingdom))
+              // {
+              //   echo "id yang di ambil : ". $rowid['id_kingdom']. "<br>";
+              // }
+            }
+            else {
+              $sql_input_kingdom = "INSERT INTO tb_kingdom (nama_kingdom) SELECT td FROM tmp WHERE tmp.`id`=$row[id];";
+              $input_kingdom = mysqli_query($con,$sql_input_kingdom);
+              $last_id_kingdom = mysqli_insert_id($con);
+              // echo $sql_input_kingdom . "<br>";
+              // echo "Last id yang di ambil : ". $last_id_kingdom. "<br>";
+            }
             echo "<br>";
           }
 
