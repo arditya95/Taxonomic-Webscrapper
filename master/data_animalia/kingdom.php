@@ -8,6 +8,7 @@
           <tbody class="table table-striped table-bordered table-hover">
             <th style="text-align:center;" class="text-uppercase">No</th>
             <th style="text-align:center;" class="text-uppercase">Kingdom</th>
+            <th style="text-align:center;" class="text-uppercase">Action</th>
             <?php
               include 'koneksi.php';
               $no=1;
@@ -29,12 +30,14 @@
               //var_dump($result);
               while ($row = mysqli_fetch_array($result))
               {
-                echo '
+                echo "
                 <tr>
-                   <td style="text-align:center;" >'.$no.'</td>
-                   <td style="text-align:center;">'.$row['nama_kingdom'].'</td>
+                   <td style='text-align:center;' >".$no."</td>
+                   <td style='text-align:center;'>".$row['nama_kingdom']."</td>
+                   <td style='text-align:center;'> <a href='update_kingdom.php?id=$row[id_kingdom]'>Edit</a> |
+                   <a href='..\action\delete\delete_kingdom.php?id=$row[id_kingdom]'>Delete</a></td>
                 </tr>
-                ';
+                ";
                 $no++;
               }
             ?>

@@ -1,13 +1,14 @@
 <!-- Animalia -->
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <label>Class</label>
+    <label>Genus</label>
   </div>
   <div class="panel-body">
       <table id="example" class="table table-striped table-bordered table-hover">
           <tbody class="table table-striped table-bordered table-hover">
             <th style="text-align:center;" class="text-uppercase">No</th>
-            <th style="text-align:center;" class="text-uppercase">Class</th>
+            <th style="text-align:center;" class="text-uppercase">Genus</th>
+            <th style="text-align:center;" class="text-uppercase">Action</th>
             <?php
               include 'koneksi.php';
               $no=1;
@@ -24,17 +25,19 @@
                         ON tb_class.`id_phylum` = tb_phylum.`id_phylum`
                         INNER JOIN tb_kingdom
                         ON tb_phylum.`id_kingdom` = tb_kingdom.`id_kingdom`
-                        GROUP BY nama_class;";
+                        GROUP BY nama_genus;";
               $result = mysqli_query($con,$query);
               //var_dump($result);
               while ($row = mysqli_fetch_array($result))
               {
-                echo '
+                echo "
                 <tr>
-                   <td style="text-align:center;" >'.$no.'</td>
-                   <td style="text-align:center;">'.$row['nama_class'].'</td>
+                   <td style='text-align:center;' >".$no."</td>
+                   <td style='text-align:center;'>".$row['nama_genus']."</td>
+                   <td style='text-align:center;'> <a href='update_genus.php?id=$row[id_genus]'>Edit</a> |
+                   <a href='..\action\delete\delete_genus.php?id=$row[id_genus]'>Delete</a></td>
                 </tr>
-                ';
+                ";
                 $no++;
               }
             ?>
