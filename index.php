@@ -119,13 +119,13 @@
 											<?php
 		                    include 'koneksi.php';
 		                    $query = "SELECT
-		                              (SELECT COUNT(DISTINCT tb_kingdom.`nama_kingdom`) FROM tb_kingdom) AS Kingdom,
-		                              (SELECT COUNT(DISTINCT tb_phylum.`nama_phylum`) FROM tb_phylum)AS Phylum,
-		                              (SELECT COUNT(DISTINCT tb_class.`nama_class`) FROM tb_class) AS Class,
-		                              (SELECT COUNT(DISTINCT tb_ordo.`nama_ordo`) FROM tb_ordo) AS Ordo,
-		                              (SELECT COUNT(DISTINCT tb_family.`nama_family`) FROM tb_family) AS Family,
-		                              (SELECT COUNT(DISTINCT tb_genus.`nama_genus`) FROM tb_genus) AS Genus,
-		                              (SELECT COUNT(DISTINCT tb_species.`nama_species`) FROM tb_species) AS Species";
+		                              (SELECT COUNT(DISTINCT tb_kingdom.`nama_kingdom`) FROM tb_kingdom WHERE id_kingdom !=1) AS Kingdom,
+		                              (SELECT COUNT(DISTINCT tb_phylum.`nama_phylum`) FROM tb_phylum WHERE id_phylum !=1)AS Phylum,
+		                              (SELECT COUNT(DISTINCT tb_class.`nama_class`) FROM tb_class WHERE id_class !=1) AS Class,
+		                              (SELECT COUNT(DISTINCT tb_ordo.`nama_ordo`) FROM tb_ordo WHERE id_ordo !=1) AS Ordo,
+		                              (SELECT COUNT(DISTINCT tb_family.`nama_family`) FROM tb_family WHERE id_family !=1) AS Family,
+		                              (SELECT COUNT(DISTINCT tb_genus.`nama_genus`) FROM tb_genus WHERE id_genus !=1) AS Genus,
+		                              (SELECT COUNT(DISTINCT tb_species.`nama_species`) FROM tb_species WHERE id_species !=1) AS Species";
 		                    $result = mysqli_query($con,$query);
 		                    //var_dump($result);
 		                    while ($row = mysqli_fetch_array($result))
