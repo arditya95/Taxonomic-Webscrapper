@@ -36,6 +36,7 @@
                       $query=("SELECT * FROM tb_family");
                       $hasil = mysqli_query($con,$query);
                       $select= '<select name="golongan" class="form-control">';
+                      $select.='<option selected="selected" value="0">Pilih Golongan</option>';
                       while($row=mysqli_fetch_array($hasil))
                         {
                             $select.='<option selected="selected" value="'.$row['id_family'].'">'.$row['nama_family'].'</option>';

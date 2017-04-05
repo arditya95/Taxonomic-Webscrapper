@@ -4,6 +4,8 @@
     <label>Phylum</label>
   </div>
   <div class="panel-body">
+    <a href="..\action\insert\phylum.php" class="btn btn-primary" role="button"><i class="fa fa-plus-circle" aria-hidden="true"></i>
+  Tambah Data</a>
       <table id="example" class="table table-striped table-bordered table-hover">
           <tbody class="table table-striped table-bordered table-hover">
             <th style="text-align:center;" class="text-uppercase">No</th>
@@ -35,8 +37,10 @@
                    <td style='text-align:center;' >".$no."</td>
                    <td style='text-align:center;'>".$row['nama_phylum']."</td>
                    <td style='text-align:center;'>
-                   <a href='..\action\update\phylum.php?id=$row[id_phylum]'>Edit</a> |
-                   <a href='..\action\delete\delete_phylum.php?id=$row[id_phylum]'>Delete</a></td>
+                   <a href='..\action\update\phylum.php?id=$row[id_phylum]'>
+                   <i class='fa fa-pencil-square-o' aria-hidden='true'>Edit</a> |
+                   <a href='..\action\delete\delete_phylum.php?id=$row[id_phylum]'>
+                   <i class='fa fa-times' aria-hidden='true'></i>Delete</a></td>
                 </tr>
                 ";
                 $no++;

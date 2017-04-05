@@ -4,6 +4,8 @@
     <label>Class</label>
   </div>
   <div class="panel-body">
+    <a href="..\action\insert\class.php" class="btn btn-primary" role="button"><i class="fa fa-plus-circle" aria-hidden="true"></i>
+  Tambah Data</a>
       <table id="example" class="table table-striped table-bordered table-hover">
           <tbody class="table table-striped table-bordered table-hover">
             <th style="text-align:center;" class="text-uppercase">No</th>
@@ -35,8 +37,10 @@
                    <td style='text-align:center;' >".$no."</td>
                    <td style='text-align:center;'>".$row['nama_class']."</td>
                    <td style='text-align:center;'>
-                   <a href='..\action\update\class.php?id=$row[id_class]'>Edit</a> |
-                   <a href='..\action\delete\delete_class.php?id=$row[id_class]'>Delete</a></td>
+                   <a href='..\action\update\class.php?id=$row[id_class]'>
+                   <i class='fa fa-pencil-square-o' aria-hidden='true'>Edit</a> |
+                   <a href='..\action\delete\delete_class.php?id=$row[id_class]'>
+                   <i class='fa fa-times' aria-hidden='true'></i>Delete</a></td>
                 </tr>
                 ";
                 $no++;
