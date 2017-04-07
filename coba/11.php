@@ -32,6 +32,7 @@
               echo "[Kingdom] Print SQL New Input : ".$sql_input . "<br>";
               echo "[Kingdom] Last ID yang Diambil : ". $use_id_kingdom. "<br>";
             }
+            $use_id_species=1;
             echo "<br>";
           }
 
@@ -184,6 +185,44 @@
             $use_id_genus=1;
             echo "<br>";
           }
+
+          elseif ($row['th']=="Group" || $row['th']=="Habitat" || $row['th']=="Diet" || $row['th']=="Prey" || $row['th']=="Predators" || $row['th']=="Lifestyle" || $row['th']=="Life Span"){
+            $sql_cek="SELECT * from tb_ciri where ciri='$row[th]'";
+            $hasil_cek = mysqli_query($con,$sql_cek);
+            $row_coun=mysqli_num_rows($hasil_cek);
+            echo "[Ciri] Print Row td : ". $row['td'] ."<br>";
+            echo "[Ciri] Print SQL Cek : " .$sql_cek . "<br>";
+            echo "[Ciri] Jumlah ROW : ". $row_coun . "<br>";
+              if ($row_coun==1) {
+                while ($rowid = mysqli_fetch_array($hasil_cek))
+                {
+                  $use_id_ciri = $rowid['id_ciri'];
+                  echo "[Ciri] ID yang Diambil : ". $use_id_ciri. "<br>";
+                }
+              }
+              else {
+                $sql_input = "INSERT INTO tb_ciri (ciri) SELECT th FROM tmp WHERE tmp.`id`=$row[id];";
+                $new_input = mysqli_query($con,$sql_input);
+                $use_id_ciri = mysqli_insert_id($con);
+                echo "[Ciri] Print SQL New Input : ".$sql_input . "<br>";
+                echo "[Ciri] Last ID yang Diambil : ". $use_id_ciri. "<br>";
+              }
+              $sql_cek="SELECT * from tb_ciri_species where keterangan_cspecies='$row[td]'";
+              $hasil_cek = mysqli_query($con,$sql_cek);
+              $row_coun=mysqli_num_rows($hasil_cek);
+              echo "[Ciri Species] Print Row td : ". $row['td'] ."<br>";
+              echo "[Ciri Species] Print SQL Cek : " .$sql_cek . "<br>";
+              echo "[Ciri Species] Jumlah ROW : ". $row_coun . "<br>";
+              if($row_coun==0){
+                $sql_input = "INSERT INTO tb_ciri_species (keterangan_cspecies, id_species, id_ciri) SELECT td, $use_id_species, $use_id_ciri FROM tmp WHERE tmp.`id`=$row[id];";
+                $new_input = mysqli_query($con,$sql_input);
+                $use_id_ciri = mysqli_insert_id($con);
+                echo "[Ciri Species] Print SQL New Input : ".$sql_input . "<br>";
+                echo "[Ciri Species] Last ID yang Diambil : ". $use_id_ciri. "<br>";
+              }
+              $use_id_ciri=1;
+              echo "<br>";
+            }
 
         // else{
         //     $sql_input = "GAGAL DIINPUT";
