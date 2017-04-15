@@ -39,7 +39,7 @@
                       $select.='<option selected="selected" value="0">Pilih Golongan</option>';
                       while($row=mysqli_fetch_array($hasil))
                         {
-                            $select.='<option selected="selected" value="'.$row['id_family'].'">'.$row['nama_family'].'</option>';
+                            $select.='<option value="'.$row['id_family'].'">'.$row['nama_family'].'</option>';
                         }
                       $select.='</select>';
                       echo $select;
