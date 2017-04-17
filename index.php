@@ -62,7 +62,7 @@
 			                ?>
 											<div id="txtHint"></div>
 			              </table>
-			              <!-- <button type="submit" class="btn btn-primary disabled">Save</button> -->
+			              <button type="submit" class="btn btn-primary">Proses</button>
 									</form>
 		            </div>
 		        </div>

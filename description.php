@@ -19,10 +19,19 @@
             $inputquery = "INSERT INTO tb_descrip (descrip) VALUES ('$inputhasil')";
             mysqli_query($con,$inputquery);
             //var_dump($inputhasil);
-
            }
             echo "SELESAI";
      ?>
+
+     <?php
+        include_once 'koneksi.php';
+        $sql = "SELECT * FROM tb_descrip";
+        $result = mysqli_query($con,$sql);
+        while($row = mysqli_fetch_array($result)){
+          echo $row['descrip'];
+        }
+     ?>
+
      </div>
   </body>
 </html>

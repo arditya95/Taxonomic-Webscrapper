@@ -224,6 +224,36 @@
               echo "<br>";
             }
 
+          elseif ($row['th']=="Deskripsi"){
+            $sql_cek="SELECT * from tb_species where id_species=$use_id_species and deskripsi_species='$row[td]'";
+            $hasil_cek = mysqli_query($con,$sql_cek);
+            $row_coun=mysqli_num_rows($hasil_cek);
+            echo "[Deskripsi Species] Print Row td : ". $row['td'] ."<br>";
+            echo "[Deskripsi Species] Print SQL Cek : " .$sql_cek . "<br>";
+            echo "[Deskripsi Species] Jumlah ROW : ". $row_coun . "<br>";
+              if ($row_coun==0) {
+                $sql_input = "UPDATE tb_species SET deskripsi_species = (SELECT td FROM tmp WHERE tmp.`id`=$row[id]) WHERE id_species=$use_id_species;";
+                $new_input = mysqli_query($con,$sql_input);
+                echo "[Deskripsi Species] Print SQL New Input : ".$sql_input . "<br>";
+              }
+              echo "<br>";
+            }
+
+          elseif ($row['th']=="Image"){
+            $sql_cek="SELECT * from tb_gambar_species where id_species=$use_id_species and gambar_species='$row[td]'";
+            $hasil_cek = mysqli_query($con,$sql_cek);
+            $row_coun=mysqli_num_rows($hasil_cek);
+            echo "[Image Species] Print Row td : ". $row['td'] ."<br>";
+            echo "[Image Species] Print SQL Cek : " .$sql_cek . "<br>";
+            echo "[Image Species] Jumlah ROW : ". $row_coun . "<br>";
+              if ($row_coun==0) {
+                $sql_input = "INSERT INTO tb_gambar_species (id_species, gambar_species) SELECT $use_id_species, td FROM tmp WHERE tmp.`id`=$row[id];";
+                $new_input = mysqli_query($con,$sql_input);
+                echo "[Image Species] Print SQL New Input : ".$sql_input . "<br>";
+              }
+            echo "<br>";
+            }
+
         // else{
         //     $sql_input = "GAGAL DIINPUT";
         //     echo "[ERROR] ERROR ID : ". $row['id'] . " = " . $sql_input . "<br>";
