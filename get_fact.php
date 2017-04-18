@@ -11,7 +11,7 @@
     set_time_limit(0);
       Include "koneksi.php";
       include("simple_html_dom.php");
-      $pilih = "SELECT * FROM tb_link where id=17";
+      $pilih = "SELECT * FROM tb_link";
       $hasil = mysqli_query($con,$pilih);
       while ($row = mysqli_fetch_array($hasil))
        {

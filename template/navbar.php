@@ -48,7 +48,25 @@
                             <a href="#"><i class="fa fa-table"></i> Master Data<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="master/data_animalia/index.php"><i class="fa fa-table"></i> Data Animalia</a>
+                                    <a href="master/data_animalia/index.php"><i class="fa fa-table"></i> Data Kingdom</a>
+                                </li>
+                                <li>
+                                    <a href="master/data_animalia/index.php"><i class="fa fa-table"></i> Data Phylum</a>
+                                </li>
+                                <li>
+                                    <a href="master/data_animalia/index.php"><i class="fa fa-table"></i> Data Class</a>
+                                </li>
+                                <li>
+                                    <a href="master/data_animalia/index.php"><i class="fa fa-table"></i> Data Ordo</a>
+                                </li>
+                                <li>
+                                    <a href="master/data_animalia/index.php"><i class="fa fa-table"></i> Data Family</a>
+                                </li>
+                                <li>
+                                    <a href="master/data_animalia/index.php"><i class="fa fa-table"></i> Data Genus</a>
+                                </li>
+                                <li>
+                                    <a href="master/data_animalia/index.php"><i class="fa fa-table"></i> Data Species</a>
                                 </li>
                                 <!-- <li>
                                     <a href="#"><i class="fa fa-table"></i> Data Plantae</a>

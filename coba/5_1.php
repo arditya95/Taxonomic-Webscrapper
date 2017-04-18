@@ -35,6 +35,7 @@
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
           <div class="caption">
+            <img src="http://a-z-animals.com/media/animals/images/40x40/asian_elephant3.jpg"  class="img-rounded">
             <h3> <?= $row['nama_kingdom']; ?> </h3>
             <p>  <?= $row['nama_species']; ?> </p>
             <a href="lihat.php?id=<?php echo $row['id_species']; ?>" target="_blank" class="btn btn-primary"> Lihat Selengkapnya </a>
