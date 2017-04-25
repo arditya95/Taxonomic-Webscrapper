@@ -64,7 +64,7 @@
 			              </table>
 										<a href="get_link.php" class="btn btn-primary" role="button">Proses Get Link</a>
 										<a href="get_fact.php" class="btn btn-primary" role="button">Proses Get Fact</a>
-										<a href="11.php" class="btn btn-primary" role="button">Proses Filtering</a>
+										<a href="filter.php" class="btn btn-primary" role="button">Proses Filtering</a>
 									</form>
 		            </div>
 		        </div>
