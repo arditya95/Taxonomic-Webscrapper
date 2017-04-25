@@ -6,4 +6,5 @@ if (isset($_POST['submit'])) {
   $sql="INSERT INTO tb_kingdom (nama_kingdom, deskripsi_kingdom) VALUES ('$nama','$deskripsi');";
   mysqli_query($con,$sql);
 }
+header("Location: ../../../master.php?kode=7.php");
 ?>

@@ -40,6 +40,7 @@
                   </div>
                 </div>
                 <input type="submit" name="submit" class="btn btn-primary" value="Save">
+                <a href="<?php echo $_SERVER['HTTP_REFERER'] ?>" class="btn btn-primary" role="button">Back</a>
               </form>
             </div>
           </div>

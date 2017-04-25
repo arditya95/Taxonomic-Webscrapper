@@ -42,6 +42,7 @@
             </table>
             <!-- END -->
          </div>
+         </div>
       <?php include 'template/script.php'; ?>
       <?php include 'template/footer.php'; ?>
    </body>

@@ -11,4 +11,5 @@ if (isset($_POST['submit'])) {
   nama_english = '$inggris', deskripsi_species = '$deskripsi', id_genus = '$golongan' WHERE id_species = '$id';";
   mysqli_query($con,$sql);
 }
+header("Location: ../../../master.php?kode=1.php");
 ?>

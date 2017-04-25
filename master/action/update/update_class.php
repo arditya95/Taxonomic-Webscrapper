@@ -8,5 +8,6 @@ if (isset($_POST['submit'])) {
   $sql="UPDATE tb_class SET nama_class = '$nama', deskripsi_class = '$deskripsi',
   id_phylum = '$golongan' WHERE id_class = '$id';";
   mysqli_query($con,$sql);
+  header("Location: ../../../master.php?kode=5.php");
 }
 ?>

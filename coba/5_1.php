@@ -14,18 +14,20 @@
 
   <?php
     include '../koneksi.php';
-    $query = "SELECT * FROM tb_species
-              INNER JOIN tb_genus
+    $query = "SELECT * FROM tb_gambar_species
+              RIGHT JOIN tb_species
+              ON tb_species.`id_species` = tb_gambar_species.`id_species`
+              RIGHT JOIN tb_genus
               ON tb_species.`id_genus` = tb_genus.`id_genus`
-              INNER JOIN tb_family
+              RIGHT JOIN tb_family
               ON tb_genus.`id_family` = tb_family.`id_family`
-              INNER JOIN tb_ordo
+              RIGHT JOIN tb_ordo
               ON tb_family.`id_ordo` = tb_ordo.`id_ordo`
-              INNER JOIN tb_class
+              RIGHT JOIN tb_class
               ON tb_ordo.`id_class` = tb_class.`id_class`
-              INNER JOIN tb_phylum
+              RIGHT JOIN tb_phylum
               ON tb_class.`id_phylum` = tb_phylum.`id_phylum`
-              INNER JOIN tb_kingdom
+              RIGHT JOIN tb_kingdom
               ON tb_phylum.`id_kingdom` = tb_kingdom.`id_kingdom`;";
     $result = mysqli_query($con,$query);
   ?>
@@ -35,10 +37,10 @@
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
           <div class="caption">
-            <img src="http://a-z-animals.com/media/animals/images/40x40/asian_elephant3.jpg"  class="img-rounded">
-            <h3> <?= $row['nama_kingdom']; ?> </h3>
-            <p>  <?= $row['nama_species']; ?> </p>
-            <a href="lihat.php?id=<?php echo $row['id_species']; ?>" target="_blank" class="btn btn-primary"> Lihat Selengkapnya </a>
+            <img src="<?php echo $row['gambar_species']; ?>" height="100" width="100" class="img-rounded">
+            <h3> <?= $row['nama_species']; ?> </h3>
+            <p>  <?= $row['nama_kingdom']; ?> </p>
+            <a href="5_2.php?id=<?php echo $row['id_species']; ?>" target="_self" class="btn btn-primary"> Lihat Selengkapnya </a>
           </div>
         </div>
       </div>

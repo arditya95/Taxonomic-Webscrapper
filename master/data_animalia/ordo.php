@@ -1,10 +1,11 @@
+<?php include_once 'konfirmasi.php'; ?>
 <!-- Animalia -->
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <label>Ordo</label>
+    <label>Data Ordo</label>
   </div>
   <div class="panel-body">
-    <a href="..\action\insert\ordo.php" class="btn btn-primary" role="button"><i class="fa fa-plus-circle" aria-hidden="true"></i>
+    <a href="master\action\insert\ordo.php" class="btn btn-primary" role="button"><i class="fa fa-plus-circle" aria-hidden="true"></i>
   Tambah Data</a>
       <table id="example" class="table table-striped table-bordered table-hover">
           <tbody class="table table-striped table-bordered table-hover">
@@ -37,9 +38,9 @@
                    <td style='text-align:center;' >".$no."</td>
                    <td style='text-align:center;'>".$row['nama_ordo']."</td>
                    <td style='text-align:center;'>
-                   <a href='..\action\update\ordo.php?id=$row[id_ordo]'>
+                   <a href='master\action\update\ordo.php?id=$row[id_ordo]'>
                    <i class='fa fa-pencil-square-o' aria-hidden='true'>Edit</a> |
-                   <a href='..\action\delete\delete_ordo.php?id=$row[id_ordo]'>
+                   <a href='master\action\delete\delete_ordo.php?id=$row[id_ordo]' class='delete'>
                    <i class='fa fa-times' aria-hidden='true'></i>Delete</a></td>
                 </tr>
                 ";

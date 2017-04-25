@@ -1,10 +1,11 @@
+<?php include_once 'konfirmasi.php'; ?>
 <!-- Animalia -->
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <label>Class</label>
+    <label>Data Class</label>
   </div>
   <div class="panel-body">
-    <a href="..\action\insert\class.php" class="btn btn-primary" role="button"><i class="fa fa-plus-circle" aria-hidden="true"></i>
+    <a href="master\action\insert\class.php" class="btn btn-primary" role="button"><i class="fa fa-plus-circle" aria-hidden="true"></i>
   Tambah Data</a>
       <table id="example" class="table table-striped table-bordered table-hover">
           <tbody class="table table-striped table-bordered table-hover">
@@ -37,9 +38,9 @@
                    <td style='text-align:center;' >".$no."</td>
                    <td style='text-align:center;'>".$row['nama_class']."</td>
                    <td style='text-align:center;'>
-                   <a href='..\action\update\class.php?id=$row[id_class]'>
+                   <a href='master\action\update\class.php?id=$row[id_class]'>
                    <i class='fa fa-pencil-square-o' aria-hidden='true'>Edit</a> |
-                   <a href='..\action\delete\delete_class.php?id=$row[id_class]'>
+                   <a href='master\action\delete\delete_class.php?id=$row[id_class]' class='delete'>
                    <i class='fa fa-times' aria-hidden='true'></i>Delete</a></td>
                 </tr>
                 ";

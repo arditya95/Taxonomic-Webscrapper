@@ -48,25 +48,25 @@
                             <a href="#"><i class="fa fa-table"></i> Master Data<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="master/data_animalia/index.php"><i class="fa fa-table"></i> Data Kingdom</a>
+                                    <a href="master.php?kode=7.php"><i class="fa fa-table"></i> Data Kingdom</a>
                                 </li>
                                 <li>
-                                    <a href="master/data_animalia/index.php"><i class="fa fa-table"></i> Data Phylum</a>
+                                    <a href="master.php?kode=6.php"><i class="fa fa-table"></i> Data Phylum</a>
                                 </li>
                                 <li>
-                                    <a href="master/data_animalia/index.php"><i class="fa fa-table"></i> Data Class</a>
+                                    <a href="master.php?kode=5.php"><i class="fa fa-table"></i> Data Class</a>
                                 </li>
                                 <li>
-                                    <a href="master/data_animalia/index.php"><i class="fa fa-table"></i> Data Ordo</a>
+                                    <a href="master.php?kode=4.php"><i class="fa fa-table"></i> Data Ordo</a>
                                 </li>
                                 <li>
-                                    <a href="master/data_animalia/index.php"><i class="fa fa-table"></i> Data Family</a>
+                                    <a href="master.php?kode=3.php"><i class="fa fa-table"></i> Data Family</a>
                                 </li>
                                 <li>
-                                    <a href="master/data_animalia/index.php"><i class="fa fa-table"></i> Data Genus</a>
+                                    <a href="master.php?kode=2.php"><i class="fa fa-table"></i> Data Genus</a>
                                 </li>
                                 <li>
-                                    <a href="master/data_animalia/index.php"><i class="fa fa-table"></i> Data Species</a>
+                                    <a href="master.php?kode=1.php"><i class="fa fa-table"></i> Data Species</a>
                                 </li>
                                 <!-- <li>
                                     <a href="#"><i class="fa fa-table"></i> Data Plantae</a>
