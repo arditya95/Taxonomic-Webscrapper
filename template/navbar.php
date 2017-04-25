@@ -45,6 +45,10 @@
                         </li>
 
                         <li>
+                            <a href="view_data.php"><i class="fa fa-eye"></i> View Data</a>
+                        </li>
+
+                        <li>
                             <a href="#"><i class="fa fa-table"></i> Master Data<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>

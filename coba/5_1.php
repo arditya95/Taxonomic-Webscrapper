@@ -28,7 +28,8 @@
               RIGHT JOIN tb_phylum
               ON tb_class.`id_phylum` = tb_phylum.`id_phylum`
               RIGHT JOIN tb_kingdom
-              ON tb_phylum.`id_kingdom` = tb_kingdom.`id_kingdom`;";
+              ON tb_phylum.`id_kingdom` = tb_kingdom.`id_kingdom`
+              GROUP BY tb_species.`nama_species`;";
     $result = mysqli_query($con,$query);
   ?>
 
