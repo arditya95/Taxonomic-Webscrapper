@@ -17,6 +17,7 @@
                 $query = "SELECT * FROM tb_ciri RIGHT JOIN tb_ciri_species ON tb_ciri.`id_ciri` = tb_ciri_species.`id_ciri`
                           RIGHT JOIN tb_species ON tb_ciri_species.`id_species`=tb_species.`id_species`
                           RIGHT JOIN tb_genus ON tb_species.`id_genus` = tb_genus.`id_genus`
+                          LEFT JOIN tb_gambar_species ON tb_gambar_species.`id_species`=tb_species.`id_species`
                           RIGHT JOIN tb_family ON tb_genus.`id_family` = tb_family.`id_family`
                           RIGHT JOIN tb_ordo ON tb_family.`id_ordo` = tb_ordo.`id_ordo`
                           RIGHT JOIN tb_class ON tb_ordo.`id_class` = tb_class.`id_class`
@@ -25,6 +26,9 @@
                           WHERE tb_species.id_species='$_GET[id]';";
                 $result = mysqli_query($con,$query);
                 $row = mysqli_fetch_array($result);
+                ?>
+                <img src="<?php echo $row['gambar_species']; ?>" class="img-rounded">
+                <?php
                 echo '
                 <tr>
                 <td style="text-align:center;">Kingdom</td>
@@ -59,6 +63,8 @@
                 <td style="text-align:center;">'.$row['keterangan_cspecies'].'</td>
                 </tr>
                 ';
+                ?>
+                <?php
                 while($row = mysqli_fetch_array($result)){
                   echo '
                   <tr>

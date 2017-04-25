@@ -1,3 +1,33 @@
+<?php
+// Include "koneksi.php";
+// $sql="INSERT INTO tb_kingdom (nama_kingdom) VALUES ('Tidak Diketahui');";
+// $idsql="SELECT id_kingdom FROM tb_kingdom WHERE nama_kingdom='tidak diketahui';";
+//
+// $sql="INSERT INTO tb_phylum (nama_phylum) VALUES ('Tidak Diketahui');";
+// $idsql="SELECT id_phylum FROM tb_phylum WHERE nama_phylum='tidak diketahui';";
+//
+// $sql="INSERT INTO tb_class (nama_class) VALUES ('Tidak Diketahui');";
+// $idsql="SELECT id_class FROM tb_class WHERE nama_class='tidak diketahui';";
+//
+// $sql="INSERT INTO tb_ordo (nama_ordo) VALUES ('Tidak Diketahui');";
+// $idsql="SELECT id_ordo FROM tb_ordo WHERE nama_ordo='tidak diketahui';";
+//
+// $sql="INSERT INTO tb_family (nama_family) VALUES ('Tidak Diketahui');";
+// $idsql="SELECT id_family FROM tb_family WHERE nama_family='tidak diketahui';";
+//
+// $sql="INSERT INTO tb_genus (nama_genus) VALUES ('Tidak Diketahui');";
+// $idsql="SELECT id_genus FROM tb_genus WHERE nama_genus='tidak diketahui';";
+//
+// $sql="INSERT INTO tb_species (nama_species) VALUES ('Tidak Diketahui');";
+// $idsql="SELECT id_species FROM tb_species WHERE nama_species='tidak diketahui';";
+//
+// $sql="INSERT INTO tb_ciri (ciri) VALUES ('Tidak Diketahui');";
+// $idsql="SELECT id_ciri FROM tb_ciri WHERE ciri='tidak diketahui';";
+//
+// $hasil_sql = mysqli_query($con,$sql);
+// $hasil_idsql = mysqli_query($con,$idsql);
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -56,7 +86,8 @@
               echo "[Phylum] Print SQL New Input : ".$sql_input . "<br>";
               echo "[Phylum] Last ID yang Diambil : ". $use_id_phylum. "<br>";
             }
-            $use_id_kingdom=1;
+            $idsql="SELECT id_kingdom FROM tb_kingdom WHERE nama_kingdom='tidak diketahui';";
+            $use_id_kingdom=mysqli_query($con,$idsql);
             echo "<br>";
           }
 
@@ -81,7 +112,8 @@
               echo "[Class] Print SQL New Input : ".$sql_input . "<br>";
               echo "[Class] Last ID yang Diambil : ". $use_id_class. "<br>";
             }
-            $use_id_phylum=1;
+            $idsql="SELECT id_phylum FROM tb_phylum WHERE nama_phylum='tidak diketahui';";
+            $use_id_phylum=mysqli_query($con,$idsql);
             echo "<br>";
           }
 
@@ -106,7 +138,8 @@
               echo "[Ordo] Print SQL New Input : ".$sql_input . "<br>";
               echo "[Ordo] Last ID yang Diambil : ". $use_id_ordo. "<br>";
             }
-            $use_id_class=1;
+            $idsql="SELECT id_class FROM tb_class WHERE nama_class='tidak diketahui';";
+            $use_id_class=mysqli_query($con,$idsql);
             echo "<br>";
           }
 
@@ -131,7 +164,8 @@
               echo "[Family] Print SQL New Input : ".$sql_input . "<br>";
               echo "[Family] Last ID yang Diambil : ". $use_id_family. "<br>";
             }
-            $use_id_ordo=1;
+            $idsql="SELECT id_ordo FROM tb_ordo WHERE nama_ordo='tidak diketahui';";
+            $use_id_ordo=mysqli_query($con,$idsql);
             echo "<br>";
           }
 
@@ -156,7 +190,8 @@
               echo "[Genus] Print SQL New Input : ".$sql_input . "<br>";
               echo "[Genus] Last ID yang Diambil : ". $use_id_genus. "<br>";
             }
-            $use_id_family=1;
+            $idsql="SELECT id_family FROM tb_family WHERE nama_family='tidak diketahui';";
+            $use_id_family=mysqli_query($con,$idsql);
             echo "<br>";
           }
 
@@ -181,7 +216,8 @@
               echo "[Species] Print SQL New Input : ".$sql_input . "<br>";
               echo "[Species] Last ID yang Diambil : ". $use_id_species. "<br>";
             }
-            $use_id_genus=1;
+            $idsql="SELECT id_genus FROM tb_genus WHERE nama_genus='tidak diketahui';";
+            $use_id_genus=mysqli_query($con,$idsql);
             $des=0;
             $imgcount=0;
             echo "<br>";
@@ -221,7 +257,8 @@
                 echo "[Ciri Species] Print SQL New Input : ".$sql_input . "<br>";
                 echo "[Ciri Species] Last ID yang Diambil : ". $use_id_ciri. "<br>";
               }
-              $use_id_ciri=1;
+              $idsql="SELECT id_ciri FROM tb_ciri WHERE ciri='tidak diketahui';";
+              $use_id_ciri=mysqli_query($con,$idsql);
               echo "<br>";
             }
 
@@ -258,7 +295,8 @@
                   $imgcount++;
                 }
               }
-              $use_id_species=1;
+              $idsql="SELECT id_species FROM tb_species WHERE nama_species='tidak diketahui';";
+              $use_id_species=mysqli_query($con,$idsql);
             echo "<br>";
             }
 
