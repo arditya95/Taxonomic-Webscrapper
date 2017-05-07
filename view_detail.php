@@ -59,6 +59,10 @@
                 <td style="text-align:center;">'.$row['nama_species'].'</td>
                 </tr>
                 <tr>
+                <td style="text-align:center;">Deskripsi</td>
+                <td style="text-align:justify;">'.$row['deskripsi_species'].'</td>
+                </tr>
+                <tr>
                 <td style="text-align:center;">'.$row['ciri'].'</td>
                 <td style="text-align:center;">'.$row['keterangan_cspecies'].'</td>
                 </tr>
@@ -73,6 +77,11 @@
                   </tr>
                   ';
                 }
+                // echo'
+                // <tr>
+                // <td style="text-align:center;">Deskripsi</td>
+                // <td style="text-align:center;">'.$row['deskripsi_species'].'</td>
+                // </tr>';
                 ?>
               </tbody>
             </table>
