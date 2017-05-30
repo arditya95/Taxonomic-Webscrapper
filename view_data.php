@@ -3,15 +3,15 @@
    <head>
      <meta charset="utf-8">
      <title>Taxonomic Data Grabbing</title>
-     <?php include 'template/head.php'; ?>
+     <?php include_once 'template/head.php'; ?>
    </head>
    <body>
       <div id="wrapper">
-         <?php include 'template/navbar.php'; ?>
+         <?php include_once 'template/navbar.php'; ?>
+         <?php include_once 'setting/koneksi.php'; ?>
          <div id="page-wrapper">
             <!-- START -->
             <?php
-              include 'koneksi.php';
               $query = "SELECT * FROM tb_gambar_species
                         RIGHT JOIN tb_species
                         ON tb_species.`id_species` = tb_gambar_species.`id_species`
@@ -48,7 +48,7 @@
             <!-- END -->
          </div>
          </div>
-      <?php include 'template/script.php'; ?>
-      <?php include 'template/footer.php'; ?>
+      <?php include_once 'template/script.php'; ?>
+      <?php include_once 'template/footer.php'; ?>
    </body>
 </html>

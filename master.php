@@ -11,7 +11,7 @@
          <div id="page-wrapper">
             <!-- START -->
             <?php
-              require_once 'koneksi.php';
+              require_once 'setting/koneksi.php';
               if (isset($_GET['kode'])) {
                 if ($_GET['kode']==1) {
                   require_once 'master/data_animalia/species.php';

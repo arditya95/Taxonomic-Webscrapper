@@ -20,7 +20,6 @@
                 <!-- /.dropdown -->
             </ul>
             <!-- /.navbar-top-links -->
-
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
@@ -41,7 +40,7 @@
                         </li> -->
 
                         <li>
-                            <a href="link.php"><i class="fa fa-link"></i> Web Link</a>
+                            <a href="view_link.php"><i class="fa fa-link"></i> Web Link</a>
                         </li>
 
                         <li>

@@ -1,5 +1,5 @@
 <?php
-include_once("../../../koneksi.php");
+include_once '../../../setting/koneksi.php';
 if (isset($_POST['submit'])) {
   $nama = $_POST['nama'];
   $deskripsi = $_POST['deskripsi'];

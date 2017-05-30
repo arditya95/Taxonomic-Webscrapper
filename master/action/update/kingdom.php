@@ -20,7 +20,7 @@
             </div>
 
             <?php
-              Include "../../../koneksi.php";
+              include_once '../../../setting/koneksi.php';
               $sql=("SELECT * FROM tb_kingdom WHERE id_kingdom = '$_GET[id]'");
               $result = mysqli_query($con,$sql);
               $baris=mysqli_fetch_array($result);

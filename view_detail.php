@@ -3,17 +3,17 @@
    <head>
      <meta charset="utf-8">
      <title>Taxonomic Data Grabbing</title>
-     <?php include 'template/head.php'; ?>
+     <?php include_once 'template/head.php'; ?>
    </head>
    <body>
       <div id="wrapper">
-         <?php include 'template/navbar.php'; ?>
+         <?php include_once 'template/navbar.php'; ?>
+         <?php include_once 'setting/koneksi.php'; ?>
          <div id="page-wrapper">
             <!-- START -->
             <table id="example" class="table table-striped table-bordered table-hover">
               <tbody class="table table-striped table-bordered table-hover">
                 <?php
-                include 'koneksi.php';
                 $query = "SELECT * FROM tb_ciri RIGHT JOIN tb_ciri_species ON tb_ciri.`id_ciri` = tb_ciri_species.`id_ciri`
                           RIGHT JOIN tb_species ON tb_ciri_species.`id_species`=tb_species.`id_species`
                           RIGHT JOIN tb_genus ON tb_species.`id_genus` = tb_genus.`id_genus`
@@ -88,7 +88,7 @@
             <!-- END -->
          </div>
          </div>
-      <?php include 'template/script.php'; ?>
-      <?php include 'template/footer.php'; ?>
+      <?php include_once 'template/script.php'; ?>
+      <?php include_once 'template/footer.php'; ?>
    </body>
 </html>

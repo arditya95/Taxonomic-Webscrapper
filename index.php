@@ -2,7 +2,7 @@
 
 <head>
 	<title>Taxonomic Data Grabbing</title>
-	<?php include 'template/head.php'; ?>
+	<?php include_once 'template/head.php'; ?>
 	<script>
 	function showUser(str) {
 	   if (str == "") {
@@ -30,7 +30,8 @@
 
 <body>
 	<div id="wrapper">
-		<?php include 'template/navbar.php'; ?>
+		<?php include_once 'template/navbar.php'; ?>
+		<?php include_once "setting/koneksi.php"; ?>
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
@@ -49,7 +50,6 @@
 									<form class="form-horizontal" action="#" method="post">
 			              <table class="table table-striped table-bordered">
 			                <?php
-			                  Include "koneksi.php";
 			                  $query=("SELECT id, nama FROM tb_web");
 			                  $hasil = mysqli_query($con,$query);
 			                  $select= '<select name="website" class="form-control" onchange="showUser(this.value)">';
@@ -121,7 +121,6 @@
 											<th style="text-align:center;" class="text-uppercase">Genus</th>
 											<th style="text-align:center;" class="text-uppercase">Species</th>
 											<?php
-		                    include 'koneksi.php';
 		                    $query = "SELECT
 		                              (SELECT COUNT(DISTINCT tb_kingdom.`nama_kingdom`) FROM tb_kingdom WHERE id_kingdom !=1) AS Kingdom,
 		                              (SELECT COUNT(DISTINCT tb_phylum.`nama_phylum`) FROM tb_phylum WHERE id_phylum !=1)AS Phylum,
@@ -180,7 +179,7 @@
 		    }
 		  }
 		</script>
-		<?php include 'template/script.php'; ?>
-		<?php include 'template/footer.php'; ?>
+		<?php include_once 'template/script.php'; ?>
+		<?php include_once 'template/footer.php'; ?>
 	</body>
 </html>

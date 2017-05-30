@@ -20,7 +20,7 @@
             </div>
 
             <?php
-              Include "../../../koneksi.php";
+              include_once '../../../setting/koneksi.php';
               $sql=("SELECT * FROM tb_species WHERE id_species = '$_GET[id]'");
               $result = mysqli_query($con,$sql);
               $baris=mysqli_fetch_array($result);
@@ -49,7 +49,6 @@
                   <div class="form-group">
                     <label for="golongan">Golongan Genus</label>
                     <?php
-                      Include "../../../koneksi.php";
                       $query=("SELECT * FROM tb_genus");
                       $hasil = mysqli_query($con,$query);
                       $select= '<select name="golongan" class="form-control">';
