@@ -35,11 +35,11 @@
                   require_once 'master/data_animalia/kingdom.php';
                 }
                 else {
-                  require_once 'master/data_animalia/pilih.php';
+                  require_once 'master/data_animalia/kingdom.php';
                 }
               }
               else {
-                require_once 'master/data_animalia/pilih.php';
+                require_once 'master/data_animalia/kingdom.php';
               }
             ?>
             <!-- END -->
