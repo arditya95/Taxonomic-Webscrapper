@@ -32,7 +32,7 @@
                   <div class="form-group">
                     <label for="golongan">Golongan Family</label>
                     <?php
-                      Include "../../../koneksi.php";
+                      include_once '../../../setting/koneksi.php';
                       $query=("SELECT * FROM tb_family");
                       $hasil = mysqli_query($con,$query);
                       $select= '<select name="golongan" class="form-control">';

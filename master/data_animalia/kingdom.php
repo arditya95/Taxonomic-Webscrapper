@@ -13,7 +13,7 @@
             <th style="text-align:center;" class="text-uppercase">Kingdom</th>
             <th style="text-align:center;" class="text-uppercase">Action</th>
             <?php
-              include 'koneksi.php';
+              // include_once '../../../setting/koneksi.php';
               $no=1;
               $query = "SELECT * FROM tb_kingdom
                         INNER JOIN tb_phylum
