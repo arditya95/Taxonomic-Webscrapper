@@ -1,9 +1,15 @@
 <?php
-// KONFIGURASI DATABASE
-$db_host="localhost";
-$db_user="root";
-$db_pass="";
-$db_name="classify";
+// [SERVER] KONFIGURASI DATABASE
+$db_host="mysql.idhostinger.com";
+$db_user="u294221690_class";
+$db_pass="classify";
+$db_name="u294221690_class";
+
+// [LOCAL] KONFIGURASI DATABASE
+// $db_host="localhost";
+// $db_user="root";
+// $db_pass="";
+// $db_name="classify";
 
 $con = mysqli_connect($db_host,$db_user,$db_pass,$db_name);
 
