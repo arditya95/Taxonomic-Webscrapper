@@ -7,5 +7,5 @@ if (isset($_POST['submit'])) {
   $sql="INSERT INTO tb_ordo (nama_ordo, deskripsi_ordo, id_class) VALUES ('$nama','$deskripsi', '$golongan');";
   mysqli_query($con,$sql);
 }
-header("Location: ../../../master.php?kode=4.php");
+header("Location: ../../../route.php?kode=4.php");
 ?>
