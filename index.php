@@ -50,12 +50,12 @@
 									<form class="form-horizontal" action="#" method="post">
 			              <table class="table table-striped table-bordered">
 			                <?php
-			                  $query=("SELECT id, nama FROM tb_web");
+			                  $query=("SELECT id_referensi, link FROM tb_referensi");
 			                  $hasil = mysqli_query($con,$query);
 			                  $select= '<select name="website" class="form-control" onchange="showUser(this.value)">';
 			                  while($row=mysqli_fetch_array($hasil))
 			                    {
-			                        $select.='<option selected="selected" value="'.$row['id'].'">'.$row['nama'].'</option>';
+			                        $select.='<option selected="selected" value="'.$row['id_referensi'].'">'.$row['link'].'</option>';
 			                    }
 			                  $select.='</select>';
 			                  echo $select;
