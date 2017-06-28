@@ -71,6 +71,18 @@
                                 <li>
                                     <a href="route.php?kode=1.php"><i class="fa fa-table"></i> Data Species</a>
                                 </li>
+                                <li>
+                                    <a href="route.php?kode=8.php"><i class="fa fa-table"></i> Data Ciri</a>
+                                </li>
+                                <li>
+                                    <a href="route.php?kode=9.php"><i class="fa fa-table"></i> Data Habitat</a>
+                                </li>
+                                <li>
+                                    <a href="route.php?kode=10.php"><i class="fa fa-table"></i> Data Wilayah</a>
+                                </li>
+                                <li>
+                                    <a href="route.php?kode=11.php"><i class="fa fa-table"></i> Data Referensi</a>
+                                </li>
                                 <!-- <li>
                                     <a href="#"><i class="fa fa-table"></i> Data Plantae</a>
                                 </li> -->
