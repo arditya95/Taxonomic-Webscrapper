@@ -62,9 +62,9 @@
 			                ?>
 											<div id="txtHint"></div>
 			              </table>
-										<a href="get_link.php" class="btn btn-primary" role="button">Proses Get Link</a>
-										<a href="get_fact.php" class="btn btn-primary" role="button">Proses Get Fact</a>
-										<a href="filter.php" class="btn btn-primary" role="button">Proses Filtering</a>
+										<a href="app/scrap/get_link.php" class="btn btn-primary" role="button">Proses Get Link</a>
+										<a href="app/scrap/get_fact.php" class="btn btn-primary" role="button">Proses Get Fact</a>
+										<a href="app/scrap/filter.php" class="btn btn-primary" role="button">Proses Filtering</a>
 									</form>
 		            </div>
 		        </div>

@@ -7,11 +7,13 @@
   <div class="panel-body">
     <a href="master\action\insert\phylum.php" class="btn btn-primary" role="button"><i class="fa fa-plus-circle" aria-hidden="true"></i>
   Tambah Data</a>
-      <table id="example" class="table table-striped table-bordered table-hover">
+      <table id="dataTables" class="table table-striped table-bordered table-hover">
+        <thead>
+          <th style="text-align:center;" class="text-uppercase">No</th>
+          <th style="text-align:center;" class="text-uppercase">Phylum</th>
+          <th style="text-align:center;" class="text-uppercase">Action</th>
+        </thead>
           <tbody class="table table-striped table-bordered table-hover">
-            <th style="text-align:center;" class="text-uppercase">No</th>
-            <th style="text-align:center;" class="text-uppercase">Phylum</th>
-            <th style="text-align:center;" class="text-uppercase">Action</th>
             <?php
               // include_once '../../../setting/koneksi.php';
               $no=1;

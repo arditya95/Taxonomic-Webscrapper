@@ -288,7 +288,7 @@
       $message = 'Proses Selesai dengan waktu ' . $sec . ' detik';
           echo "<SCRIPT type='text/javascript'> //not showing me this
               alert('$message');
-              window.location.replace(\"index.php\");
+              window.location.replace(\"../../index.php\");
           </SCRIPT>";
     ?>
 

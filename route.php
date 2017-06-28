@@ -46,6 +46,9 @@
                 elseif ($_GET['kode']==11) {
                   require_once 'master/data/referensi.php';
                 }
+                elseif ($_GET['kode']==12) {
+                  require_once 'master/data/link.php';
+                }
                 else {
                   require_once 'master/data/kingdom.php';
                 }

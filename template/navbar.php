@@ -40,7 +40,7 @@
                         </li> -->
 
                         <li>
-                            <a href="view_link.php"><i class="fa fa-link"></i> Web Link</a>
+                            <a href="route.php?kode=12.php"><i class="fa fa-link"></i> Web Link</a>
                         </li>
 
                         <li>
