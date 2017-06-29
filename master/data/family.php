@@ -38,10 +38,10 @@
                 echo "
                 <tr>
                    <td style='text-align:center;' >".$no."</td>
-                   <td style='text-align:center;'>".$row['nama_family']."</td>
+                   <td style='text-align:left;'>".$row['nama_family']."</td>
                    <td style='text-align:center;'>
                    <a href='master\action\update\Family.php?id=$row[id_family]'>
-                   <i class='fa fa-pencil-square-o' aria-hidden='true'>Edit</a> |
+                   <i class='fa fa-pencil-square-o' aria-hidden='true'></i>Edit</a> |
                    <a href='master\action\delete\delete_family.php?id=$row[id_family]' class='delete'>
                    <i class='fa fa-times' aria-hidden='true'></i>Delete</a></td>
                 </tr>

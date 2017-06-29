@@ -25,7 +25,7 @@
                 echo "
                 <tr>
                    <td style='text-align:center;' >".$no."</td>
-                   <td style='text-align:center;'>".$row['link']."</td>
+                   <td style='text-align:left;'>".$row['link']."</td>
                    <td style='text-align:center;'>
                    <a href='master\action\update\Referensi.php?id=$row[id_referensi]'>
                    <i class='fa fa-pencil-square-o' aria-hidden='true'></i>Edit</a> |

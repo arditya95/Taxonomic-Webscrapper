@@ -38,7 +38,7 @@
                 echo "
                 <tr>
                    <td style='text-align:center;' >".$no."</td>
-                   <td style='text-align:center;'>".$row['nama_kingdom']."</td>
+                   <td style='text-align:left;'>".$row['nama_kingdom']."</td>
                    <td style='text-align:center;'>
                    <a href='master\action\update\kingdom.php?id=$row[id_kingdom]'>
                    <i class='fa fa-pencil-square-o' aria-hidden='true'></i>Edit</a> |

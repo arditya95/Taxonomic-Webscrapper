@@ -36,7 +36,7 @@
                 <div class="col-sm-6 col-md-4">
                   <div class="thumbnail">
                     <div class="caption">
-                      <img src="<?php echo $row['gambar_species']; ?>" height="100" width="100" class="img-rounded">
+                      <img src="<?php echo $row['gambar_species']; ?>" height="100" width="100" class="img-rounded" alt="Responsive image">
                       <h3> <?= $row['nama_species']; ?> </h3>
                       <p>  <?= $row['nama_kingdom']; ?> </p>
                       <a href="view_detail.php?id=<?php echo $row['id_species']; ?>" target="_self" class="btn btn-primary"> Lihat Selengkapnya </a>

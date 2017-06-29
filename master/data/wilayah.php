@@ -25,7 +25,7 @@
                 echo "
                 <tr>
                    <td style='text-align:center;' >".$no."</td>
-                   <td style='text-align:center;'>".$row['nama_wilayah']."</td>
+                   <td style='text-align:left;'>".$row['nama_wilayah']."</td>
                    <td style='text-align:center;'>
                    <a href='master\action\update\wilayah.php?id=$row[id_wilayah]'>
                    <i class='fa fa-pencil-square-o' aria-hidden='true'></i>Edit</a> |

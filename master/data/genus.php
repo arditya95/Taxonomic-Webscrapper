@@ -38,7 +38,7 @@
                 echo "
                 <tr>
                    <td style='text-align:center;' >".$no."</td>
-                   <td style='text-align:center;'>".$row['nama_genus']."</td>
+                   <td style='text-align:left;'>".$row['nama_genus']."</td>
                    <td style='text-align:center;'>
                    <a href='master\action\update\genus.php?id=$row[id_genus]'>
                    <i class='fa fa-pencil-square-o' aria-hidden='true'></i>Edit</a> |

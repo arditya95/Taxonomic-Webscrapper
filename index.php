@@ -108,7 +108,7 @@
 				<div class="col-lg-12">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
-							<label>Kingdom Animalia</label>
+							<label>Data Collection</label>
 						</div>
 						<div class="panel-body">
 							<form class="form-horizontal" action="#" method="post">

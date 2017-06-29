@@ -25,7 +25,7 @@
                 echo "
                 <tr>
                    <td style='text-align:center;' >".$no."</td>
-                   <td style='text-align:center;'>".$row['habitat']."</td>
+                   <td style='text-align:left;'>".$row['habitat']."</td>
                    <td style='text-align:center;'>
                    <a href='master\action\update\habitat.php?id=$row[id_habitat]'>
                    <i class='fa fa-pencil-square-o' aria-hidden='true'></i>Edit</a> |
