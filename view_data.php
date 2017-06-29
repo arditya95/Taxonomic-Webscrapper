@@ -4,6 +4,22 @@
      <meta charset="utf-8">
      <title>Taxonomic Data Grabbing</title>
      <?php include_once 'template/head.php'; ?>
+     <style media="screen">
+       .thumbnail{
+         width: 300px;
+         // or you could use percentage values for responsive layout
+         // width : 100%;
+         height: 300px;
+         overflow: auto;
+       }
+
+       /*.thumbnail img{
+         // your styles for the image
+         width: 100%;
+         height: auto;
+         display: block;
+       }*/
+     </style>
    </head>
    <body>
       <div id="wrapper">
@@ -35,8 +51,8 @@
             <?php while($row = mysqli_fetch_assoc($result)):?>
                 <div class="col-sm-6 col-md-4">
                   <div class="thumbnail">
+                    <img src="<?php echo $row['gambar_species']; ?>" height="150" width="150" class="img-rounded" alt="Responsive image">
                     <div class="caption">
-                      <img src="<?php echo $row['gambar_species']; ?>" height="100" width="100" class="img-rounded" alt="Responsive image">
                       <h3> <?= $row['nama_species']; ?> </h3>
                       <p>  <?= $row['nama_kingdom']; ?> </p>
                       <a href="view_detail.php?id=<?php echo $row['id_species']; ?>" target="_self" class="btn btn-primary"> Lihat Selengkapnya </a>

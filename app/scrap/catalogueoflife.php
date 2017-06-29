@@ -14,7 +14,7 @@ foreach($html->find('table[id=taxonomic-classification] td') as $e)
 {
    $hasil = $e->plaintext;
    $trim=trim($hasil);
-   if (!strcmp($trim,"CoL") || !strcmp($trim,"ELPT") || strpos($trim,"LSID")!== false) {
+   if (!strcmp($trim,"CoL") || !strcmp($trim,"ELPT") || strpos($trim,"LSID") !== false) {
     //  var_dump($trim);
     //  echo "<br>";
     // TODO: KINGDOM - GENUS
@@ -31,5 +31,6 @@ foreach($html->find('h1.page_header i') as $e)
   $trim=trim($hasil);
   var_dump($trim);
   echo "<br>";
+  // TODO: SPECIES
 }
 ?>
