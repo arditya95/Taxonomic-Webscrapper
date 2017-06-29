@@ -17,11 +17,19 @@ foreach($html->find('table[id=taxonomic-classification] td') as $e)
    if (!strcmp($trim,"CoL") || !strcmp($trim,"ELPT") || strpos($trim,"LSID")!== false) {
     //  var_dump($trim);
     //  echo "<br>";
-    // TODO: melakukan cek terhadap td
+    // TODO: KINGDOM - GENUS
    }
    else {
      var_dump($trim);
      echo "<br>";
    }
+}
+
+foreach($html->find('h1.page_header i') as $e)
+{
+  $hasil = $e->plaintext;
+  $trim=trim($hasil);
+  var_dump($trim);
+  echo "<br>";
 }
 ?>
