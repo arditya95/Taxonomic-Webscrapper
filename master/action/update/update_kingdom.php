@@ -7,6 +7,16 @@ if (isset($_POST['submit'])) {
   $sql="UPDATE tb_kingdom SET nama_kingdom = '$nama', deskripsi_kingdom = '$deskripsi'
   WHERE id_kingdom = '$id';";
   mysqli_query($con,$sql);
-  header('Location: ' . $_SERVER['HTTP_REFERER']);
+  if($sql)
+  {
+    echo "<script language=javascript>
+    alert('Data Berhasil Disimpan');
+    location.href='../../../route.php?kode=data_kingdom';</script>";
+  }
+  else
+  {
+    echo"<script language=javascript> alert ('Gagal Tambah Data');history.back();</script>";
+  }
 }
+// header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>
