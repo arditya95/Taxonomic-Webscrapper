@@ -6,6 +6,6 @@ if (isset($_POST['submit'])) {
   $sql="UPDATE tb_habitat SET habitat = '$nama'
   WHERE id_habitat = '$id';";
   mysqli_query($con,$sql);
-  header("Location: ../../../route.php?kode=9.php");
+  header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
 ?>

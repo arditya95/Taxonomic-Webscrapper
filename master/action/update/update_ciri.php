@@ -7,6 +7,6 @@ if (isset($_POST['submit'])) {
   $sql="UPDATE tb_ciri SET ciri = '$nama', deskripsi_ciri = '$deskripsi'
   WHERE id_ciri = '$id';";
   mysqli_query($con,$sql);
-  header("Location: ../../../route.php?kode=8.php");
+  header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
 ?>

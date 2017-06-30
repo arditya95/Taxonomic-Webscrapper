@@ -10,6 +10,6 @@ if (isset($_POST['submit'])) {
   $sql="UPDATE tb_species SET nama_species = '$nama', nama_indonesia = '$indonesia',
   nama_english = '$inggris', deskripsi_species = '$deskripsi', id_genus = '$golongan' WHERE id_species = '$id';";
   mysqli_query($con,$sql);
+  header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
-header("Location: ../../../route.php?kode=1.php");
 ?>

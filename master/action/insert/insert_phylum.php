@@ -7,5 +7,5 @@ if (isset($_POST['submit'])) {
   $sql="INSERT INTO tb_phylum (nama_phylum, deskripsi_phylum, id_kingdom) VALUES ('$nama','$deskripsi', '$golongan');";
   mysqli_query($con,$sql);
 }
-header("Location: ../../../route.php?kode=6.php");
+header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

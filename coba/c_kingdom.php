@@ -43,10 +43,12 @@
  <script>
  $(document).ready(function(){
       var i=1;
+
       $('#add').click(function(){
            i++;
-           var html = '<tr id="row'+i+'"><td><input type="text" name="name[]" placeholder="Enter your Name" class="form-control name_list"/></td><th><select class="form-control" name="select[]"><?php if(count($hasil)){ foreach ($hasil as $row){ echo "<option value=".$row['id_ciri'].'>'.$row['ciri']."</option>"; }}?></th><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>';
-           $('#dynamic_field').append(html);
+           $("dynamic_field select").val(id);
+          //  var html = '<tr id="row'+i+'"><td><input type="text" name="name[]" placeholder="Enter your Name" class="form-control name_list"/></td><th><select class="form-control" name="select[]"><?php //if(count($hasil)){ foreach ($hasil as $row){ echo "<option value=".$row['id_ciri'].'>'.$row['ciri']."</option>"; }}?></th><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>';
+          //  $('#dynamic_field').append(html);
       });
       $(document).on('click', '.btn_remove', function(){
            var button_id = $(this).attr("id");

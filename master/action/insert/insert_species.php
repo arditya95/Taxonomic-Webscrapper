@@ -9,5 +9,5 @@ if (isset($_POST['submit'])) {
   $sql="INSERT INTO tb_species (nama_species, nama_indonesia, nama_english, deskripsi_species, id_genus) VALUES ('$nama', '$indonesia', '$inggris', '$deskripsi', '$golongan');";
   mysqli_query($con,$sql);
 }
-header("Location: ../../../route.php?kode=1.php");
+header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

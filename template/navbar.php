@@ -40,7 +40,7 @@
                         </li> -->
 
                         <li>
-                            <a href="route.php?kode=12.php"><i class="fa fa-link"></i> Web Link</a>
+                            <a href="route.php?kode=data_link"><i class="fa fa-link"></i> Web Link</a>
                         </li>
 
                         <li>
@@ -51,37 +51,37 @@
                             <a href="#"><i class="fa fa-table"></i> Master Data<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="route.php?kode=7.php"><i class="fa fa-table"></i> Data Kingdom</a>
+                                    <a href="route.php?kode=data_kingdom"><i class="fa fa-table"></i> Data Kingdom</a>
                                 </li>
                                 <li>
-                                    <a href="route.php?kode=6.php"><i class="fa fa-table"></i> Data Phylum</a>
+                                    <a href="route.php?kode=data_phylum"><i class="fa fa-table"></i> Data Phylum</a>
                                 </li>
                                 <li>
-                                    <a href="route.php?kode=5.php"><i class="fa fa-table"></i> Data Class</a>
+                                    <a href="route.php?kode=data_class"><i class="fa fa-table"></i> Data Class</a>
                                 </li>
                                 <li>
-                                    <a href="route.php?kode=4.php"><i class="fa fa-table"></i> Data Ordo</a>
+                                    <a href="route.php?kode=data_ordo"><i class="fa fa-table"></i> Data Ordo</a>
                                 </li>
                                 <li>
-                                    <a href="route.php?kode=3.php"><i class="fa fa-table"></i> Data Family</a>
+                                    <a href="route.php?kode=data_family"><i class="fa fa-table"></i> Data Family</a>
                                 </li>
                                 <li>
-                                    <a href="route.php?kode=2.php"><i class="fa fa-table"></i> Data Genus</a>
+                                    <a href="route.php?kode=data_genus"><i class="fa fa-table"></i> Data Genus</a>
                                 </li>
                                 <li>
-                                    <a href="route.php?kode=1.php"><i class="fa fa-table"></i> Data Species</a>
+                                    <a href="route.php?kode=data_species"><i class="fa fa-table"></i> Data Species</a>
                                 </li>
                                 <li>
-                                    <a href="route.php?kode=8.php"><i class="fa fa-table"></i> Data Ciri</a>
+                                    <a href="route.php?kode=data_ciri"><i class="fa fa-table"></i> Data Ciri</a>
                                 </li>
                                 <li>
-                                    <a href="route.php?kode=9.php"><i class="fa fa-table"></i> Data Habitat</a>
+                                    <a href="route.php?kode=data_habitat"><i class="fa fa-table"></i> Data Habitat</a>
                                 </li>
                                 <li>
-                                    <a href="route.php?kode=10.php"><i class="fa fa-table"></i> Data Wilayah</a>
+                                    <a href="route.php?kode=data_wilayah"><i class="fa fa-table"></i> Data Wilayah</a>
                                 </li>
                                 <li>
-                                    <a href="route.php?kode=11.php"><i class="fa fa-table"></i> Data Referensi</a>
+                                    <a href="route.php?kode=data_referensi"><i class="fa fa-table"></i> Data Referensi</a>
                                 </li>
                                 <!-- <li>
                                     <a href="#"><i class="fa fa-table"></i> Data Plantae</a>

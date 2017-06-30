@@ -5,5 +5,5 @@ if (isset($_POST['submit'])) {
   $sql="INSERT INTO tb_habitat (habitat) VALUES ('$nama');";
   mysqli_query($con,$sql);
 }
-header("Location: ../../../route.php?kode=9.php");
+header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

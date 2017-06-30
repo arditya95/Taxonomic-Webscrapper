@@ -8,6 +8,6 @@ if (isset($_POST['submit'])) {
   $sql="UPDATE tb_class SET nama_class = '$nama', deskripsi_class = '$deskripsi',
   id_phylum = '$golongan' WHERE id_class = '$id';";
   mysqli_query($con,$sql);
-  header("Location: ../../../route.php?kode=5.php");
+  header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
 ?>

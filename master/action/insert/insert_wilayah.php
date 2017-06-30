@@ -5,5 +5,5 @@ if (isset($_POST['submit'])) {
   $sql="INSERT INTO tb_wilayah (nama_wilayah) VALUES ('$nama');";
   mysqli_query($con,$sql);
 }
-header("Location: ../../../route.php?kode=10.php");
+header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>
