@@ -16,16 +16,17 @@
         <div class="col-md-6">
           <div class="panel panel-primary">
             <div class="panel-heading">
-              <label>Edit Ciri Species</label>
+              <?php
+                include_once '../../../setting/koneksi.php';
+                $sql=("SELECT * FROM tb_ciri_species
+                       INNER JOIN tb_species
+                       ON tb_ciri_species.`id_species`=tb_species.`id_species`
+                       WHERE tb_ciri_species.`id_species` = '$_GET[idt]' AND id_ciri = '$_GET[idc]'");
+                $result = mysqli_query($con,$sql);
+                $baris=mysqli_fetch_array($result);
+              ?>
+              <label>Edit Ciri Species <?php echo $baris['nama_species'];?></label>
             </div>
-
-            <?php
-              include_once '../../../setting/koneksi.php';
-              $sql=("SELECT * FROM tb_ciri_species WHERE id_species = '$_GET[idt]' AND id_ciri = '$_GET[idc]'");
-              $result = mysqli_query($con,$sql);
-              $baris=mysqli_fetch_array($result);
-            ?>
-
             <div class="panel-body">
               <form class="form-horizontal" action="update_c_species.php" method="post">
                 <div class="container-fluid">

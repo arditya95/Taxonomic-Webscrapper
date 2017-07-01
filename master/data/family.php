@@ -17,19 +17,7 @@
             <?php
               // include_once '../../../setting/koneksi.php';
               $no=1;
-              $query = "SELECT * FROM tb_species
-                        INNER JOIN tb_genus
-                        ON tb_species.`id_genus` = tb_genus.`id_genus`
-                        INNER JOIN tb_family
-                        ON tb_genus.`id_family` = tb_family.`id_family`
-                        INNER JOIN tb_ordo
-                        ON tb_family.`id_ordo` = tb_ordo.`id_ordo`
-                        INNER JOIN tb_class
-                        ON tb_ordo.`id_class` = tb_class.`id_class`
-                        INNER JOIN tb_phylum
-                        ON tb_class.`id_phylum` = tb_phylum.`id_phylum`
-                        INNER JOIN tb_kingdom
-                        ON tb_phylum.`id_kingdom` = tb_kingdom.`id_kingdom`
+              $query = "SELECT * FROM tb_family
                         GROUP BY nama_family;";
               $result = mysqli_query($con,$query);
               //var_dump($result);
@@ -38,7 +26,7 @@
                 echo "
                 <tr>
                    <td style='text-align:center;' >".$no."</td>
-                   <td style='text-align:left;'>".$row['nama_family']."</td>
+                   <td style='text-align:left;'> <a href=route.php?d=master/data&p=c_family&idt=$row[id_family]>$row[nama_family]</a></td>
                    <td style='text-align:center;'>
                    <a href='master\action\update\Family.php?id=$row[id_family]'>
                    <i class='fa fa-pencil-square-o' aria-hidden='true'></i>Edit</a> |

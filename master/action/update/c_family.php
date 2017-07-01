@@ -16,16 +16,17 @@
         <div class="col-md-6">
           <div class="panel panel-primary">
             <div class="panel-heading">
-              <label>Edit Ciri Family</label>
+              <?php
+                include_once '../../../setting/koneksi.php';
+                $sql=("SELECT * FROM tb_ciri_family
+                       INNER JOIN tb_family
+                       ON tb_ciri_family.`id_family`=tb_family.`id_family`
+                       WHERE tb_ciri_family.`id_family` = '$_GET[idt]' AND id_ciri = '$_GET[idc]'");
+                $result = mysqli_query($con,$sql);
+                $baris=mysqli_fetch_array($result);
+              ?>
+              <label>Edit Ciri Family <?php echo $baris['nama_family'];?></label>
             </div>
-
-            <?php
-              include_once '../../../setting/koneksi.php';
-              $sql=("SELECT * FROM tb_ciri_family WHERE id_family = '$_GET[idt]' AND id_ciri = '$_GET[idc]'");
-              $result = mysqli_query($con,$sql);
-              $baris=mysqli_fetch_array($result);
-            ?>
-
             <div class="panel-body">
               <form class="form-horizontal" action="update_c_family.php" method="post">
                 <div class="container-fluid">

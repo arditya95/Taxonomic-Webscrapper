@@ -16,16 +16,17 @@
         <div class="col-md-6">
           <div class="panel panel-primary">
             <div class="panel-heading">
-              <label>Edit Ciri Class</label>
+              <?php
+                include_once '../../../setting/koneksi.php';
+                $sql=("SELECT * FROM tb_ciri_class
+                       INNER JOIN tb_class
+                       ON tb_ciri_class.`id_class`=tb_class.`id_class`
+                       WHERE tb_ciri_class.`id_class` = '$_GET[idt]' AND id_ciri = '$_GET[idc]'");
+                $result = mysqli_query($con,$sql);
+                $baris=mysqli_fetch_array($result);
+              ?>
+              <label>Edit Ciri Class <?php echo $baris['nama_class'];?></label>
             </div>
-
-            <?php
-              include_once '../../../setting/koneksi.php';
-              $sql=("SELECT * FROM tb_ciri_class WHERE id_class = '$_GET[idt]' AND id_ciri = '$_GET[idc]'");
-              $result = mysqli_query($con,$sql);
-              $baris=mysqli_fetch_array($result);
-            ?>
-
             <div class="panel-body">
               <form class="form-horizontal" action="update_c_class.php" method="post">
                 <div class="container-fluid">

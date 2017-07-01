@@ -52,9 +52,14 @@
                     require_once 'master/data/link.php';
                   }
                   else {
-                    $page = $_GET['p'];
-                    $dir = $_GET['d'];
-                    $location = $dir . '/' . $page . ".php";
+                    if (!isset($_GET['d'])) {
+                      $page = $_GET['p'];
+                      $location = $page . ".php";
+                    }else {
+                      $page = $_GET['p'];
+                      $dir = $_GET['d'];
+                      $location = $dir . '/' . $page . ".php";
+                    }
                     if (file_exists($location)) {
                       include $location;
                     } else {
@@ -64,9 +69,14 @@
                   }
                 }
                 else {
-                  $page = $_GET['p'];
-                  $dir = $_GET['d'];
-                  $location = $dir . '/' . $page . ".php";
+                  if (!isset($_GET['d'])) {
+                    $page = $_GET['p'];
+                    $location = $page . ".php";
+                  }else {
+                    $page = $_GET['p'];
+                    $dir = $_GET['d'];
+                    $location = $dir . '/' . $page . ".php";
+                  }
                   if (file_exists($location)) {
                     include $location;
                   } else {

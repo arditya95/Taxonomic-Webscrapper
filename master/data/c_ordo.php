@@ -2,7 +2,14 @@
 <!-- Animalia -->
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <label>Data Ciri Ordo</label>
+    <?php
+      // include_once '../../../setting/koneksi.php';
+      $sql=("SELECT * FROM tb_ordo
+             WHERE tb_ordo.`id_ordo` = '$_GET[idt]'");
+      $result = mysqli_query($con,$sql);
+      $baris=mysqli_fetch_array($result);
+    ?>
+    <label>Ciri Ordo <?php echo $baris['nama_ordo'];?></label>
   </div>
   <div class="panel-body">
     <a href="master\action\insert\c_ordo.php" class="btn btn-primary" role="button"><i class="fa fa-plus-circle" aria-hidden="true"></i>
@@ -25,7 +32,8 @@
                         LEFT JOIN tb_ciri
                         ON tb_ciri.`id_ciri`=tb_ciri_ordo.`id_ciri`
                         LEFT JOIN tb_referensi
-                        ON tb_referensi.`id_referensi`=tb_ciri_ordo.`id_referensi`;";
+                        ON tb_referensi.`id_referensi`=tb_ciri_ordo.`id_referensi`
+                        WHERE tb_ciri_ordo.`id_ordo` = '$_GET[idt]';";
               $result = mysqli_query($con,$query);
               //var_dump($result);
               while ($row = mysqli_fetch_array($result))

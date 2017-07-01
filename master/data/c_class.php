@@ -2,7 +2,15 @@
 <!-- Animalia -->
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <label>Data Ciri Class</label>
+    <?php
+      // include_once '../../../setting/koneksi.php';
+      $sql=("SELECT * FROM tb_class
+             WHERE tb_class.`id_class` = '$_GET[idt]'");
+      $result = mysqli_query($con,$sql);
+      $baris=mysqli_fetch_array($result);
+    ?>
+    <label>Ciri Class <?php echo $baris['nama_class'];?></label>
+  </div>
   </div>
   <div class="panel-body">
     <a href="master\action\insert\c_class.php" class="btn btn-primary" role="button"><i class="fa fa-plus-circle" aria-hidden="true"></i>
@@ -20,12 +28,13 @@
               // include_once '../../../setting/koneksi.php';
               $no=1;
               $query = "SELECT * FROM tb_ciri_class
-                        LEFT JOIN tb_class
+                        RIGHT JOIN tb_class
                         ON tb_class.`id_class`=tb_ciri_class.`id_class`
-                        LEFT JOIN tb_ciri
+                        RIGHT JOIN tb_ciri
                         ON tb_ciri.`id_ciri`=tb_ciri_class.`id_ciri`
-                        LEFT JOIN tb_referensi
-                        ON tb_referensi.`id_referensi`=tb_ciri_class.`id_referensi`;";
+                        RIGHT JOIN tb_referensi
+                        ON tb_referensi.`id_referensi`=tb_ciri_class.`id_referensi`
+                        WHERE tb_ciri_class.`id_class` = '$_GET[idt]';";
               $result = mysqli_query($con,$query);
               //var_dump($result);
               while ($row = mysqli_fetch_array($result))

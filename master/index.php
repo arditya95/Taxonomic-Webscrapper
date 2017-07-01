@@ -82,7 +82,7 @@
 								<?php
                   $query = "SELECT
                             (SELECT COUNT(DISTINCT tb_kingdom.`nama_kingdom`) FROM tb_kingdom WHERE id_kingdom !=1) AS Kingdom,
-                            (SELECT COUNT(DISTINCT tb_phylum.`nama_phylum`) FROM tb_phylum WHERE id_phylum !=1)AS Phylum,
+                            (SELECT COUNT(DISTINCT tb_phylum.`nama_phylum`) FROM tb_phylum WHERE id_phylum !=1) AS Phylum,
                             (SELECT COUNT(DISTINCT tb_class.`nama_class`) FROM tb_class WHERE id_class !=1) AS Class,
                             (SELECT COUNT(DISTINCT tb_ordo.`nama_ordo`) FROM tb_ordo WHERE id_ordo !=1) AS Ordo,
                             (SELECT COUNT(DISTINCT tb_family.`nama_family`) FROM tb_family WHERE id_family !=1) AS Family,

@@ -16,16 +16,17 @@
         <div class="col-md-6">
           <div class="panel panel-primary">
             <div class="panel-heading">
-              <label>Edit Ciri Ordo</label>
+              <?php
+                include_once '../../../setting/koneksi.php';
+                $sql=("SELECT * FROM tb_ciri_ordo
+                       INNER JOIN tb_ordo
+                       ON tb_ciri_ordo.`id_ordo`=tb_ordo.`id_ordo`
+                       WHERE tb_ciri_ordo.`id_ordo` = '$_GET[idt]' AND id_ciri = '$_GET[idc]'");
+                $result = mysqli_query($con,$sql);
+                $baris=mysqli_fetch_array($result);
+              ?>
+              <label>Edit Ciri Ordo <?php echo $baris['nama_ordo'];?></label>
             </div>
-
-            <?php
-              include_once '../../../setting/koneksi.php';
-              $sql=("SELECT * FROM tb_ciri_ordo WHERE id_ordo = '$_GET[idt]' AND id_ciri = '$_GET[idc]'");
-              $result = mysqli_query($con,$sql);
-              $baris=mysqli_fetch_array($result);
-            ?>
-
             <div class="panel-body">
               <form class="form-horizontal" action="update_c_ordo.php" method="post">
                 <div class="container-fluid">
