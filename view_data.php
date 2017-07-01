@@ -51,7 +51,9 @@
             <?php while($row = mysqli_fetch_assoc($result)):?>
                 <div class="col-sm-6 col-md-4">
                   <div class="thumbnail">
+                    <div class="thumbnail-image" style="text-align:center;">
                     <img src="<?php echo $row['gambar_species']; ?>" height="150" width="150" class="img-rounded" alt="Responsive image">
+                    </div>
                     <div class="caption">
                       <h3> <?= $row['nama_species']; ?> </h3>
                       <p>  <?= $row['nama_kingdom']; ?> </p>

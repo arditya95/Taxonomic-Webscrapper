@@ -12,7 +12,7 @@
             <!-- START -->
             <?php
             require_once 'setting/koneksi.php';
-                if (!isset($_GET['p']) && !isset($_GET['kode'])) {
+                if (!isset($_GET['d']) && !isset($_GET['p']) && !isset($_GET['kode'])) {
                     include ('master/index.php');
                 } elseif (isset($_GET['kode'])) {
                   if ($_GET['kode']=="data_species") {
@@ -54,14 +54,24 @@
                   else {
                     $page = $_GET['p'];
                     $dir = $_GET['d'];
-                    include $dir . '/' . $page . ".php";
+                    $location = $dir . '/' . $page . ".php";
+                    if (file_exists($location)) {
+                      include $location;
+                    } else {
+                      include ('master/index.php');
+                    }
                     // require_once 'master/data/kingdom.php';
                   }
                 }
                 else {
                   $page = $_GET['p'];
                   $dir = $_GET['d'];
-                  include $dir . '/' . $page . ".php";
+                  $location = $dir . '/' . $page . ".php";
+                  if (file_exists($location)) {
+                    include $location;
+                  } else {
+                    include ('master/index.php');
+                  }
                   // require_once 'master/data/kingdom.php';
                 }
              ?>
