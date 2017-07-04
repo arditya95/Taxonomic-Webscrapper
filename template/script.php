@@ -1,3 +1,6 @@
+<!-- jQuery Bootgrid-->
+<!-- <script src="dist/bootgrid/jquery.bootgrid.fa.min.js" charset="utf-8"></script> -->
+<!-- <script src="dist/bootgrid/jquery.bootgrid.min.js" charset="utf-8"></script> -->
 <!-- jQuery -->
 <script src="dist/jquery/jquery.min.js"></script>
 <!-- Bootstrap Core JavaScript -->

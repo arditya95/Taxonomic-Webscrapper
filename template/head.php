@@ -4,6 +4,8 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
+<!-- BootGrid Core CSS -->
+<!-- <link href="dist/bootgrid/jquery.bootgrid.min.css" rel="stylesheet"> -->
 <!-- Bootstrap Core CSS -->
 <link href="dist/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <!-- MetisMenu CSS -->
