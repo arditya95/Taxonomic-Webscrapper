@@ -33,4 +33,23 @@ foreach($html->find('h1.page_header i') as $e)
   echo "<br>";
   // TODO: SPECIES
 }
+
+foreach($html->find('tr.even td',4) as $e)
+{
+  $hasil = $e->plaintext;
+  $trim=trim($hasil);
+  if (!empty($trim)) {
+    $pieces = explode(" ", $trim);
+    foreach ($pieces as $piece) {
+      if (!empty($piece)) {
+        $preg=preg_replace('/[:,]/', '', $piece);
+        echo "[" . $preg ."] <br> ";
+      }
+    }
+    // var_dump($pieces);
+    // echo "<br>";
+  }
+  // TODO: WILAYAH
+}
+
 ?>
