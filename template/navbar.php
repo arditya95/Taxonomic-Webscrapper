@@ -27,17 +27,17 @@
                             <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
 
-                        <!-- <li>
-                            <a href="#"><i class="fa fa-cloud"></i> Sync Data<span class="fa arrow"></span></a>
+                        <li>
+                            <a href="#"><i class="fa fa-cloud"></i> Backup Data<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#"><i class="fa fa-cloud-upload"></i> Manual Export</a>
+                                    <a href="route.php?d=master/data&p=export"><i class="fa fa-cloud-upload"></i> Export History</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-cloud-download"></i> Manual Import</a>
+                                    <a href="route.php?d=master/data&p=import"><i class="fa fa-cloud-download"></i> Import History</a>
                                 </li>
                             </ul>
-                        </li> -->
+                        </li>
 
                         <li>
                             <a href="route.php?kode=data_link"><i class="fa fa-link"></i> Web Link</a>

@@ -164,7 +164,7 @@
             // echo "<br>";
           }
 
-        elseif ($row['th']=="Scientific Name"){
+        elseif ($row['th']=="Scientific Name" || $row['th']=="Species"){
           $sql_cek="SELECT * from tb_species where nama_species='$row[td]'";
           $hasil_cek = mysqli_query($con,$sql_cek);
           $row_coun=mysqli_num_rows($hasil_cek);
@@ -244,6 +244,44 @@
                   $des++;
                 }
               }
+              // echo "<br>";
+            }
+
+          elseif ($row['th']=="Distribution"){
+            $sql_cek="SELECT * from tb_wilayah where nama_wilayah='$row[td]'";
+            $hasil_cek = mysqli_query($con,$sql_cek);
+            $row_coun=mysqli_num_rows($hasil_cek);
+            // echo "[Wilayah] Print Row td : ". $row['td'] ."<br>";
+            // echo "[Wilayah] Print SQL Cek : " .$sql_cek . "<br>";
+            // echo "[Wilayah] Jumlah ROW : ". $row_coun . "<br>";
+              if ($row_coun==1) {
+                while ($rowid = mysqli_fetch_array($hasil_cek))
+                {
+                  $use_id_wilayah = $rowid['id_wilayah'];
+                  // echo "[Wilayah] ID yang Diambil : ". $use_id_wilayah. "<br>";
+                }
+              }
+              else {
+                $sql_input = "INSERT INTO tb_wilayah (nama_wilayah) SELECT td FROM tmp WHERE tmp.`id`=$row[id];";
+                $new_input = mysqli_query($con,$sql_input);
+                $use_id_wilayah = mysqli_insert_id($con);
+                // echo "[Wilayah] Print SQL New Input : ".$sql_input . "<br>";
+                // echo "[Wilayah] Last ID yang Diambil : ". $use_id_wilayah. "<br>";
+              }
+              $sql_cek="SELECT * from tb_species_wilayah where id_species=$use_id_species and id_wilayah='$use_id_wilayah'";
+              $hasil_cek = mysqli_query($con,$sql_cek);
+              $row_coun=mysqli_num_rows($hasil_cek);
+              // echo "[Wilayah Species] Print Row td : ". $row['td'] ."<br>";
+              // echo "[Wilayah Species] Print SQL Cek : " .$sql_cek . "<br>";
+              // echo "[Wilayah Species] Jumlah ROW : ". $row_coun . "<br>";
+              if($row_coun==0){
+                $sql_input = "INSERT INTO tb_species_wilayah (id_species, id_wilayah) VALUES ($use_id_species, $use_id_wilayah)";
+                $new_input = mysqli_query($con,$sql_input);
+                $use_id_ciri = mysqli_insert_id($con);
+                // echo "[Wilayah Species] Print SQL New Input : ".$sql_input . "<br>";
+                // echo "[Wilayah Species] Last ID yang Diambil : ". $use_id_ciri. "<br>";
+              }
+              // $use_id_ciri=1;
               // echo "<br>";
             }
 

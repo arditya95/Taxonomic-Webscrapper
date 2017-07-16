@@ -1,7 +1,7 @@
 <?php
 // header('Content-Type: application/json');
 
-// include_once "../../setting/koneksi.php";
+include_once "../../setting/koneksi.php";
 include_once "../../setting/simple_html_dom.php";
 set_time_limit(0);
 error_reporting(0);
@@ -176,7 +176,10 @@ foreach ($items as $item) {
                                                                   echo "[" . $item7['name'] ."] => ";
                                                                   // TODO: Bagian Cek URL
                                                                   if (!empty($item7['url'])) {
-                                                                    echo "[" . $item7['url'] . "]<br>";
+                                                                    $url="www.catalogueoflife.org" . $item7['url'];
+                                                                    echo "[" . $url . "]<br>";
+                                                                    $query = "INSERT INTO tb_link (info) VALUES ('$url')";
+                                                                    mysqli_query($con,$query);
                                                                   }else {
                                                                     echo "[" . "URL Tidak tersedia" . "]<br>";
                                                                   }
@@ -190,4 +193,5 @@ foreach ($items as $item) {
     }
 //============================================================================
 }
+mysql_close($con);
 ?>

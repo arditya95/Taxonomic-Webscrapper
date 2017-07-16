@@ -62,6 +62,19 @@
       </div>
     </div>
 		<!-- /KOLOM 1 -->
+		<!-- KOLOM 2 -->
+    <div class="col-md-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <label>Backup Database</label>
+        </div>
+          <div class="panel-body">
+						<a href="app/backup/export.php" class="btn btn-lg btn-block btn-primary" role="button"><i class="fa fa-cloud-upload"></i> Export</a>
+						<a href="route.php?d=master/data&p=export" class="btn btn-lg btn-block btn-primary" role="button"><i class="fa fa-cloud-download"></i> Import</a>
+					</div>
+      </div>
+    </div>
+		<!-- /KOLOM 2 -->
 <!-- Animalia -->
 <div class="row">
 	<div class="col-lg-12">
