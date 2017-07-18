@@ -14,8 +14,21 @@
 
       include_once "../../setting/koneksi.php";
       include_once "../../setting/simple_html_dom.php";
-      $pilih = "SELECT * FROM tb_link WHERE label=0";
-      $hasil = mysqli_query($con,$pilih);
+
+      // TODO: mengambil berapa banyak link yang akan di proses
+      if (isset($_POST['submit'])) {
+        $qty = $_POST['quantity'];
+        if (empty($qty)) {
+          $qty=1;
+        }
+        $sql="SELECT * FROM tb_link WHERE label=0 LIMIT $qty";
+        mysqli_query($con,$sql);
+      }
+
+      // $pilih = "SELECT * FROM tb_link WHERE label=0";
+      // $hasil = mysqli_query($con,$pilih);
+
+      $hasil = mysqli_query($con,$sql);
       while ($row = mysqli_fetch_array($hasil))
        {
          $html = file_get_html($row['info']);

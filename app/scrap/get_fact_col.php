@@ -6,6 +6,16 @@ $start = microtime(true);
 include_once "../../setting/koneksi.php";
 include_once "../../setting/simple_html_dom.php";
 
+// TODO: mengambil berapa banyak link yang akan di proses
+if (isset($_POST['submit'])) {
+  $qty = $_POST['quantity'];
+  if (empty($qty)) {
+    $qty=1;
+  }
+  $sql="SELECT * FROM tb_link WHERE label=0 LIMIT $qty";
+  mysqli_query($con,$sql);
+}
+
 $url = "http://www.catalogueoflife.org/col/details/species/id/266945f29c8fa5e81b26d781b902394c/source/tree";
 // $url = "http://www.catalogueoflife.org/col/details/species/id/5d9e98b4a069ece2328c38294fa2333b/source/tree";
 

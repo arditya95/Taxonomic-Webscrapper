@@ -9,6 +9,16 @@ $start = microtime(true);
 include_once "../../setting/koneksi.php";
 include_once "../../setting/simple_html_dom.php";
 
+// TODO: mengambil berapa banyak link yang akan di proses
+// if (isset($_POST['submit'])) {
+//   $qty = $_POST['quantity'];
+//   if (empty($qty)) {
+//     $qty=1;
+//   }
+//   $sql="SELECT * FROM tb_link WHERE label=0 LIMIT $qty";
+//   mysqli_query($con,$sql);
+// }
+
 $html = file_get_html("http://a-z-animals.com/animals/");
 
 $count=0;
