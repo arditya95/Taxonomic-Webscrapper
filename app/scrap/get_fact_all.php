@@ -11,6 +11,7 @@
       set_time_limit(0);
       error_reporting(0);
       $start = microtime(true);
+      $count =0;
 
       include_once "../../setting/koneksi.php";
       include_once "../../setting/simple_html_dom.php";
@@ -31,6 +32,7 @@
       $hasil = mysqli_query($con,$sql);
       while ($row = mysqli_fetch_array($hasil))
        {
+         exec('php -q filter.php');
          $url=$row['info'];
          $host= parse_url($url, PHP_URL_HOST);
 
@@ -167,8 +169,10 @@
           }
 
            //AKHIR BAGIAN MENGANBIL GAMBAR//
+           // TODO: update tb_link jika sudah diambil data
            $query = "UPDATE tb_link SET label=1 WHERE id=$row[id]";
            mysqli_query($con,$query);
+          exec('php -q filter.php');
         }
         $time_elapsed_secs = microtime(true) - $start;
         $duration = $time_elapsed_secs;

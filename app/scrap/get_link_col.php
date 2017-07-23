@@ -6,6 +6,7 @@ include_once "../../setting/simple_html_dom.php";
 set_time_limit(0);
 error_reporting(0);
 $start = microtime(true);
+$count=0;
 
 $url='http://www.catalogueoflife.org/col/browse/tree/fetch/taxa?id=0&start=0';
 $html = file_get_contents($url);
@@ -180,6 +181,22 @@ foreach ($items as $item) {
                                                                     echo "[" . $url . "]<br>";
                                                                     $query = "INSERT INTO tb_link (info) VALUES ('$url')";
                                                                     mysqli_query($con,$query);
+                                                                    $count = $count+1;
+                                                                    // TODO: pengejekan jika data sudah 200
+                                                                    if ($count == 200) {
+                                                                      $time_elapsed_secs = microtime(true) - $start;
+                                                                      $duration = $time_elapsed_secs;
+                                                                      $hours = (int)($duration/60/60);
+                                                                      $minutes = (int)($duration/60)-$hours*60;
+                                                                      $seconds = $duration-$hours*60*60-$minutes*60;
+                                                                      $sec = number_format((float)$seconds, 2, '.', '');
+                                                                      // echo "Total execution time in seconds : " . $time_elapsed_secs;
+                                                                      $message = 'Proses Selesai dengan waktu ' . $sec . ' detik & ' . $count .' Data yang berhasil disimpan';
+                                                                          echo "<SCRIPT type='text/javascript'> //not showing me this
+                                                                              alert('$message');
+                                                                              window.location.replace(\"../../index.php\");
+                                                                          </SCRIPT>";
+                                                                    }
                                                                   }else {
                                                                     echo "[" . "URL Tidak tersedia" . "]<br>";
                                                                   }
@@ -193,5 +210,17 @@ foreach ($items as $item) {
     }
 //============================================================================
 }
-mysql_close($con);
+// mysql_close($con);
+$time_elapsed_secs = microtime(true) - $start;
+$duration = $time_elapsed_secs;
+$hours = (int)($duration/60/60);
+$minutes = (int)($duration/60)-$hours*60;
+$seconds = $duration-$hours*60*60-$minutes*60;
+$sec = number_format((float)$seconds, 2, '.', '');
+// echo "Total execution time in seconds : " . $time_elapsed_secs;
+$message = 'Proses Selesai dengan waktu ' . $sec . ' detik & ' . $count .' Data yang berhasil disimpan';
+    echo "<SCRIPT type='text/javascript'> //not showing me this
+        alert('$message');
+        window.location.replace(\"../../index.php\");
+    </SCRIPT>";
 ?>

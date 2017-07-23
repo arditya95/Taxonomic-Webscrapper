@@ -39,7 +39,7 @@ foreach($html->find('div[class=az-left-box az-animals-index] a') as $e)
     $seconds = $duration-$hours*60*60-$minutes*60;
     $sec = number_format((float)$seconds, 2, '.', '');
     // echo "Total execution time in seconds : " . $time_elapsed_secs;
-    $message = 'Proses Selesai dengan waktu ' . $sec . ' detik';
+    $message = 'Proses Selesai dengan waktu ' . $sec . ' detik & ' . $count .' Data yang berhasil disimpan';
         echo "<SCRIPT type='text/javascript'> //not showing me this
             alert('$message');
             window.location.replace(\"../../index.php\");

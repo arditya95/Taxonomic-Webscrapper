@@ -39,7 +39,7 @@
           <label>Get Link</label>
         </div>
           <div class="panel-body">
-						<form class="form-horizontal" action="#" method="post">
+						<form class="form-horizontal" action="app\scrap\get_link_all.php" method="post">
               <table class="table table-striped table-bordered">
                 <?php
                   $query=("SELECT id_referensi, link FROM tb_referensi");
@@ -56,7 +56,8 @@
                 ?>
 								<div id="txtHint"></div>
               </table>
-							<a href="app/scrap/get_link.php" class="btn btn-primary" role="button">Proses Get Link</a>
+							<input class="btn btn-primary" type="submit" name="submit" value="Proses Get Link">
+							<!-- <a href="app/scrap/get_link.php" class="btn btn-primary" role="button">Proses Get Link</a> -->
 							</form>
 							<!-- <a href="app/scrap/get_fact.php" class="btn btn-primary" role="button">Proses Get Fact</a> -->
 							<!-- <form class="" action="index.html" method="post">
@@ -110,6 +111,15 @@
           <div class="panel-body">
 						<a href="app/backup/export.php" class="btn btn-lg btn-block btn-primary" role="button"><i class="fa fa-cloud-upload"></i> Export</a>
 						<a href="route.php?d=master/data&p=export" class="btn btn-lg btn-block btn-primary" role="button"><i class="fa fa-cloud-download"></i> Import</a>
+					</div>
+      </div>
+			<div class="panel panel-primary">
+        <div class="panel-heading">
+          <label>Clear Data</label>
+        </div>
+          <div class="panel-body">
+						<a href="app\clear\truncate_tb_link.php" class="btn btn-lg btn-block btn-primary" role="button"><i class="fa fa-eraser"></i> Clear Link</a>
+						<a href="app\clear\truncate_all_tb.php" class="btn btn-lg btn-block btn-primary" role="button"><i class="fa fa-eraser"></i> Clear All</a>
 					</div>
       </div>
     </div>

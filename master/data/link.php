@@ -11,6 +11,7 @@
       </thead>
        <tbody class="table table-striped table-bordered table-hover">
             <?php
+              $no=1;
               $query = "SELECT * FROM tb_link";
               $result = mysqli_query($con,$query);
               while ($row = mysqli_fetch_array($result))
@@ -25,7 +26,7 @@
                 }
                 echo "
                 <tr>
-                   <td style='text-align:center;'>$row[id]</td>
+                   <td style='text-align:center;' >".$no."</td>
                    <td> <a href=$row[info]>$row[info]</a></td>
                    <td class=$warna style='text-align:center;'>$flag</td>
                    <td style='text-align:center;'>
@@ -35,6 +36,7 @@
                    <i class='fa fa-times' aria-hidden='true'></i>Delete</a></td>
                 </tr>
                 ";
+                $no++;
               }
              ?>
        </tbody>
