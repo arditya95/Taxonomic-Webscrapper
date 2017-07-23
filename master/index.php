@@ -118,8 +118,9 @@
           <label>Clear Data</label>
         </div>
           <div class="panel-body">
-						<a href="app\clear\truncate_tb_link.php" class="btn btn-lg btn-block btn-primary" role="button"><i class="fa fa-eraser"></i> Clear Link</a>
-						<a href="app\clear\truncate_all_tb.php" class="btn btn-lg btn-block btn-primary" role="button"><i class="fa fa-eraser"></i> Clear All</a>
+						<a href="app\clear\reset_link.php" class="btn btn-lg btn-block btn-primary" role="button"><i class="fa fa-refresh"></i> Reset Link</a>
+						<a href="app\clear\truncate_tb_link.php" class="btn btn-lg btn-block btn-primary" role="button"><i class="fa fa-trash-o"></i> Clear Link</a>
+						<!-- <a href="app\clear\truncate_all_tb.php" class="btn btn-lg btn-block btn-primary" role="button"><i class="fa fa-eraser"></i> Clear All</a> -->
 					</div>
       </div>
     </div>

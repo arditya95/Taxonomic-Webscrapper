@@ -43,25 +43,34 @@
             //AWAL BAGIAN MENGANBIL FAKTA//
             foreach($html->find('table.az-facts td') as $e)
              {
-               $inputhasil = $e->innertext;
-               $html2= str_get_html($inputhasil);
-
-               if (!empty($html2->find('a',0)->innertext)) {
-                 $a = $html2->find('a',0)->innertext;
-                 $querya = "INSERT INTO tmp (th) VALUES ('$a')";
-                 mysqli_query($con,$querya);
-                 $last_id = mysqli_insert_id($con);
-                 $updatecount=0;
-               }
-
-               elseif($inputhasil!='<div><!-- --></div>')
-                 {
-                   if($updatecount!=1)
-                   {
-                     $queryb = "UPDATE tmp SET td='$inputhasil' WHERE id=$last_id";
-                     mysqli_query($con,$queryb);
-                     $updatecount++;
-                   }
+               $inputhasil = $e->plaintext;
+               $trim=trim($inputhasil);
+                 $pieces = array_slice(explode(':', $trim), 0, 1);
+                 foreach ($pieces as $piece) {
+                     if ($count==0) {
+                       if (!empty($piece)) {
+                         $query = "INSERT INTO tmp (th) VALUES ('$piece')";
+                         mysqli_query($con,$query);
+                         $last_id = mysqli_insert_id($con);
+                         $count++;
+                       }else {
+                         $piece="INI SPACE";
+                       }
+                     }else {
+                       if (empty($piece)) {
+                         $piece="Data Kosong";
+                         $query = "UPDATE tmp SET td='$piece' WHERE id=$last_id";
+                         mysqli_query($con,$query);
+                         $count=0;
+                       }else {
+                         $query = "UPDATE tmp SET td='$piece' WHERE id=$last_id";
+                         mysqli_query($con,$query);
+                         $count=0;
+                       }
+                     }
+                     // echo "[" . $piece ."] <br> ";
+                     var_dump($piece);
+                     echo "<br>";
                  }
              }
              //AKHIR BAGIAN MENGANBIL FAKTA//
@@ -172,16 +181,17 @@
            // TODO: update tb_link jika sudah diambil data
            $query = "UPDATE tb_link SET label=1 WHERE id=$row[id]";
            mysqli_query($con,$query);
-          exec('php -q filter.php');
+          // exec('php -q filter.php');
         }
         $time_elapsed_secs = microtime(true) - $start;
         $duration = $time_elapsed_secs;
-        $hours = (int)($duration/60/60);
-        $minutes = (int)($duration/60)-$hours*60;
-        $seconds = $duration-$hours*60*60-$minutes*60;
-        $sec = number_format((float)$seconds, 2, '.', '');
+        // $hours = (int)($duration/60/60);
+        // $minutes = (int)($duration/60)-$hours*60;
+        // $seconds = $duration-$hours*60*60-$minutes*60;
+        // $sec = number_format((float)$seconds, 2, '.', '');
+        // $sec= date('i:s.u', $duration);
         // echo "Total execution time in seconds : " . $time_elapsed_secs;
-        $message = 'Proses Selesai dengan waktu ' . $sec . ' detik';
+        $message = 'Proses Selesai dengan waktu ' . $duration . ' detik';
             echo "<SCRIPT type='text/javascript'> //not showing me this
                 alert('$message');
                 window.location.replace(\"../../index.php\");

@@ -6,9 +6,9 @@
   </head>
   <body>
     <?php
-    error_reporting(0);
-    set_time_limit(0);
-    $start = microtime(true);
+    // error_reporting(0);
+    // set_time_limit(0);
+    // $start = microtime(true);
 
     include_once "../../setting/koneksi.php";
     $pilih = "SELECT * FROM tmp";
@@ -473,22 +473,22 @@
       // echo $row['id'] . " = " . $sql . "<br>";
       // mysqli_query($con,$sql);
       // $last_id = mysqli_insert_id($con);
-      // // $sql .= "TRUNCATE TABLE tmp;";
+      $truncate = "TRUNCATE TABLE tmp;";
+      mysqli_query($con,$truncate);
     }
       // echo "Selesai";
-      $time_elapsed_secs = microtime(true) - $start;
-      $duration = $time_elapsed_secs;
-      $hours = (int)($duration/60/60);
-      $minutes = (int)($duration/60)-$hours*60;
-      $seconds = $duration-$hours*60*60-$minutes*60;
-      $sec = number_format((float)$seconds, 2, '.', '');
-      // echo "Total execution time in seconds : " . $time_elapsed_secs;
-      $message = 'Proses Selesai dengan waktu ' . $sec . ' detik';
-          echo "<SCRIPT type='text/javascript'> //not showing me this
-              alert('$message');
-              window.location.replace(\"../../index.php\");
-          </SCRIPT>";
+      // $time_elapsed_secs = microtime(true) - $start;
+      // $duration = $time_elapsed_secs;
+      // $hours = (int)($duration/60/60);
+      // $minutes = (int)($duration/60)-$hours*60;
+      // $seconds = $duration-$hours*60*60-$minutes*60;
+      // $sec = number_format((float)$seconds, 2, '.', '');
+      // // echo "Total execution time in seconds : " . $time_elapsed_secs;
+      // $message = 'Proses Selesai dengan waktu ' . $sec . ' detik';
+      //     echo "<SCRIPT type='text/javascript'> //not showing me this
+      //         alert('$message');
+      //         window.location.replace(\"../../index.php\");
+      //     </SCRIPT>";
     ?>
-
   </body>
 </html>
