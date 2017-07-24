@@ -5,7 +5,7 @@
     <title></title>
 
   </head>
-  <body>
+  <!-- <body> -->
     <div id="wrapper">
     <?php
       set_time_limit(0);
@@ -28,11 +28,13 @@
 
       // $pilih = "SELECT * FROM tb_link WHERE label=0";
       // $sql = mysqli_query($con,$pilih);
-
-      $hasil = mysqli_query($con,$sql);
-      while ($row = mysqli_fetch_array($hasil))
+      // $count=0;
+      $get_link = mysqli_query($con,$sql);
+      while ($row = mysqli_fetch_array($get_link))
        {
-         exec('php -q filter.php');
+        //  $count++;
+        //  echo "$count <br>";
+        //  exec('php -q filter.php');
          $url=$row['info'];
          $host= parse_url($url, PHP_URL_HOST);
 
@@ -69,8 +71,8 @@
                        }
                      }
                      // echo "[" . $piece ."] <br> ";
-                     var_dump($piece);
-                     echo "<br>";
+                    //  var_dump($piece);
+                    //  echo "<br>";
                  }
              }
              //AKHIR BAGIAN MENGANBIL FAKTA//
@@ -104,14 +106,14 @@
             {
                $hasil = $e->plaintext;
                $trim=trim($hasil);
-               if (!strcmp($trim,"CoL") || !strcmp($trim,"ELPT") || strpos($trim,"LSID") !== false) {
+               if (!strcmp($trim,"CoL") || !strcmp($trim,"ELPT") || !strcmp($trim,"WoRMS Polychaeta") || strpos($trim,"LSID") !== false) {
                 //  var_dump($trim);
                 //  echo "<br>";
                 // TODO: KINGDOM - GENUS
                }
                else {
-                 var_dump($trim);
-                 echo "<br>";
+                //  var_dump($trim);
+                //  echo "<br>";
                  if ($updatecount==0) {
                    $querya = "INSERT INTO tmp (th) VALUES ('$trim')";
                    mysqli_query($con,$querya);
@@ -136,13 +138,13 @@
               $querya = "INSERT INTO tmp (th) VALUES ('$species')";
               mysqli_query($con,$querya);
               $last_id = mysqli_insert_id($con);
-              var_dump($species);
-              echo "<br>";
+              // var_dump($species);
+              // echo "<br>";
 
               $queryb = "UPDATE tmp SET td='$trim' WHERE id=$last_id";
               mysqli_query($con,$queryb);
-              var_dump($trim);
-              echo "<br>";
+              // var_dump($trim);
+              // echo "<br>";
               // TODO: SPECIES
             }
 
@@ -166,7 +168,7 @@
 
                       $queryb = "UPDATE tmp SET td='$preg2' WHERE id=$last_id";
                       mysqli_query($con,$queryb);
-                      echo "[" . $preg2 ."] <br> ";
+                      // echo "[" . $preg2 ."] <br> ";
                     }
                   }
                 }
@@ -181,7 +183,7 @@
            // TODO: update tb_link jika sudah diambil data
            $query = "UPDATE tb_link SET label=1 WHERE id=$row[id]";
            mysqli_query($con,$query);
-          // exec('php -q filter.php');
+           exec('php -q filter.php');
         }
         $time_elapsed_secs = microtime(true) - $start;
         $duration = $time_elapsed_secs;

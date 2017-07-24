@@ -16,23 +16,23 @@ $data = json_decode($html,true);
 $items = $data['items'];
 foreach ($items as $item) {
     // TODO: ID
-    echo "[" . $item['id'] ."] => ";
+    // echo "[" . $item['id'] ."] => ";
 
     // TODO: Bagian Cek Type/Taxon
     if (!empty( $item['type'])) {
-      echo "[" . $item['type'] ."] => ";
+      // echo "[" . $item['type'] ."] => ";
     }else {
-      echo "[" . "kingdom" . "] => ";
+      // echo "[" . "kingdom" . "] => ";
     }
 
     // TODO: Nama
-    echo "[" . $item['name'] ."] => ";
+    // echo "[" . $item['name'] ."] => ";
 
     // TODO: Bagian Cek URL
     if (!empty($item['url'])) {
-      echo "[" . $item['url'] . "]<br>";
+      // echo "[" . $item['url'] . "]<br>";
     }else {
-      echo "[" . "URL Tidak tersedia" . "]<br>";
+      // echo "[" . "URL Tidak tersedia" . "]<br>";
     }
 
     // TODO: Pengecekan Animalia dan Plantae
@@ -46,20 +46,20 @@ foreach ($items as $item) {
           $items2 = $data2['items'];
           foreach ($items2 as $item2) {
             // TODO: ID
-            echo "[" . $item2['id'] ."] => ";
+            // echo "[" . $item2['id'] ."] => ";
             // TODO: Bagian Cek Type/Taxon
             if (!empty( $item2['type'])) {
-              echo "[" . $item2['type'] ."] => ";
+              // echo "[" . $item2['type'] ."] => ";
             }else {
-              echo "[" . "kingdom" . "] => ";
+              // echo "[" . "kingdom" . "] => ";
             }
             // TODO: Nama
-            echo "[" . $item2['name'] ."] => ";
+            // echo "[" . $item2['name'] ."] => ";
             // TODO: Bagian Cek URL
             if (!empty($item2['url'])) {
-              echo "[" . $item2['url'] . "]<br>";
+              // echo "[" . $item2['url'] . "]<br>";
             }else {
-              echo "[" . "URL Tidak tersedia" . "]<br>";
+              // echo "[" . "URL Tidak tersedia" . "]<br>";
             }
       //============================================================================
       // TODO: CLASS
@@ -70,20 +70,20 @@ foreach ($items as $item) {
                 $items3 = $data3['items'];
                 foreach ($items3 as $item3) {
                   // TODO: ID
-                  echo "[" . $item3['id'] ."] => ";
+                  // echo "[" . $item3['id'] ."] => ";
                   // TODO: Bagian Cek Type/Taxon
                   if (!empty( $item3['type'])) {
-                    echo "[" . $item3['type'] ."] => ";
+                    // echo "[" . $item3['type'] ."] => ";
                   }else {
-                    echo "[" . "kingdom" . "] => ";
+                    // echo "[" . "kingdom" . "] => ";
                   }
                   // TODO: Nama
-                  echo "[" . $item3['name'] ."] => ";
+                  // echo "[" . $item3['name'] ."] => ";
                   // TODO: Bagian Cek URL
                   if (!empty($item3['url'])) {
-                    echo "[" . $item3['url'] . "]<br>";
+                    // echo "[" . $item3['url'] . "]<br>";
                   }else {
-                    echo "[" . "URL Tidak tersedia" . "]<br>";
+                    // echo "[" . "URL Tidak tersedia" . "]<br>";
                   }
                   //============================================================================
                   // TODO: ORDO
@@ -94,20 +94,20 @@ foreach ($items as $item) {
                             $items4 = $data4['items'];
                             foreach ($items4 as $item4) {
                               // TODO: ID
-                              echo "[" . $item4['id'] ."] => ";
+                              // echo "[" . $item4['id'] ."] => ";
                               // TODO: Bagian Cek Type/Taxon
                               if (!empty( $item4['type'])) {
-                                echo "[" . $item4['type'] ."] => ";
+                                // echo "[" . $item4['type'] ."] => ";
                               }else {
-                                echo "[" . "kingdom" . "] => ";
+                                // echo "[" . "kingdom" . "] => ";
                               }
                               // TODO: Nama
-                              echo "[" . $item4['name'] ."] => ";
+                              // echo "[" . $item4['name'] ."] => ";
                               // TODO: Bagian Cek URL
                               if (!empty($item4['url'])) {
-                                echo "[" . $item4['url'] . "]<br>";
+                                // echo "[" . $item4['url'] . "]<br>";
                               }else {
-                                echo "[" . "URL Tidak tersedia" . "]<br>";
+                                // echo "[" . "URL Tidak tersedia" . "]<br>";
                               }
                               //============================================================================
                               // TODO: FAMILY
@@ -118,20 +118,20 @@ foreach ($items as $item) {
                                         $items5 = $data5['items'];
                                         foreach ($items5 as $item5) {
                                           // TODO: ID
-                                          echo "[" . $item5['id'] ."] => ";
+                                          // echo "[" . $item5['id'] ."] => ";
                                           // TODO: Bagian Cek Type/Taxon
                                           if (!empty( $item5['type'])) {
-                                            echo "[" . $item5['type'] ."] => ";
+                                            // echo "[" . $item5['type'] ."] => ";
                                           }else {
-                                            echo "[" . "kingdom" . "] => ";
+                                            // echo "[" . "kingdom" . "] => ";
                                           }
                                           // TODO: Nama
-                                          echo "[" . $item5['name'] ."] => ";
+                                          // echo "[" . $item5['name'] ."] => ";
                                           // TODO: Bagian Cek URL
                                           if (!empty($item5['url'])) {
-                                            echo "[" . $item5['url'] . "]<br>";
+                                            // echo "[" . $item5['url'] . "]<br>";
                                           }else {
-                                            echo "[" . "URL Tidak tersedia" . "]<br>";
+                                            // echo "[" . "URL Tidak tersedia" . "]<br>";
                                           }
                                           //============================================================================
                                           // TODO: GENUS
@@ -142,20 +142,20 @@ foreach ($items as $item) {
                                                     $items6 = $data6['items'];
                                                     foreach ($items6 as $item6) {
                                                       // TODO: ID
-                                                      echo "[" . $item6['id'] ."] => ";
+                                                      // echo "[" . $item6['id'] ."] => ";
                                                       // TODO: Bagian Cek Type/Taxon
                                                       if (!empty( $item6['type'])) {
-                                                        echo "[" . $item6['type'] ."] => ";
+                                                        // echo "[" . $item6['type'] ."] => ";
                                                       }else {
-                                                        echo "[" . "kingdom" . "] => ";
+                                                        // echo "[" . "kingdom" . "] => ";
                                                       }
                                                       // TODO: Nama
-                                                      echo "[" . $item6['name'] ."] => ";
+                                                      // echo "[" . $item6['name'] ."] => ";
                                                       // TODO: Bagian Cek URL
                                                       if (!empty($item6['url'])) {
-                                                        echo "[" . $item6['url'] . "]<br>";
+                                                        // echo "[" . $item6['url'] . "]<br>";
                                                       }else {
-                                                        echo "[" . "URL Tidak tersedia" . "]<br>";
+                                                        // echo "[" . "URL Tidak tersedia" . "]<br>";
                                                       }
                                                       //============================================================================
                                                       // TODO: SPECIES
@@ -166,39 +166,34 @@ foreach ($items as $item) {
                                                                 $items7 = $data7['items'];
                                                                 foreach ($items7 as $item7) {
                                                                   // TODO: ID
-                                                                  echo "[" . $item7['id'] ."] => ";
+                                                                  // echo "[" . $item7['id'] ."] => ";
                                                                   // TODO: Bagian Cek Type/Taxon
                                                                   if (!empty( $item7['type'])) {
-                                                                    echo "[" . $item7['type'] ."] => ";
+                                                                    // echo "[" . $item7['type'] ."] => ";
                                                                   }else {
-                                                                    echo "[" . "kingdom" . "] => ";
+                                                                    // echo "[" . "kingdom" . "] => ";
                                                                   }
                                                                   // TODO: Nama
-                                                                  echo "[" . $item7['name'] ."] => ";
+                                                                  // echo "[" . $item7['name'] ."] => ";
                                                                   // TODO: Bagian Cek URL
                                                                   if (!empty($item7['url'])) {
-                                                                    $url="www.catalogueoflife.org" . $item7['url'];
-                                                                    echo "[" . $url . "]<br>";
+                                                                    $url="http://www.catalogueoflife.org" . $item7['url'];
+                                                                    // echo "[" . $url . "]<br>";
                                                                     $query = "INSERT INTO tb_link (info) VALUES ('$url')";
                                                                     mysqli_query($con,$query);
-                                                                    $count = $count+1;
+                                                                    $count++;
                                                                     // TODO: pengejekan jika data sudah 200
                                                                     if ($count == 200) {
                                                                       $time_elapsed_secs = microtime(true) - $start;
                                                                       $duration = $time_elapsed_secs;
-                                                                      $hours = (int)($duration/60/60);
-                                                                      $minutes = (int)($duration/60)-$hours*60;
-                                                                      $seconds = $duration-$hours*60*60-$minutes*60;
-                                                                      $sec = number_format((float)$seconds, 2, '.', '');
-                                                                      // echo "Total execution time in seconds : " . $time_elapsed_secs;
-                                                                      $message = 'Proses Selesai dengan waktu ' . $sec . ' detik & ' . $count .' Data yang berhasil disimpan';
+                                                                      $message = 'Proses Selesai dengan waktu ' . $duration . ' detik & ' . $count .' Data yang berhasil disimpan';
                                                                           echo "<SCRIPT type='text/javascript'> //not showing me this
                                                                               alert('$message');
                                                                               window.location.replace(\"../../index.php\");
                                                                           </SCRIPT>";
                                                                     }
                                                                   }else {
-                                                                    echo "[" . "URL Tidak tersedia" . "]<br>";
+                                                                    // echo "[" . "URL Tidak tersedia" . "]<br>";
                                                                   }
 
                                                                 }
@@ -210,17 +205,17 @@ foreach ($items as $item) {
     }
 //============================================================================
 }
-// mysql_close($con);
-$time_elapsed_secs = microtime(true) - $start;
-$duration = $time_elapsed_secs;
-$hours = (int)($duration/60/60);
-$minutes = (int)($duration/60)-$hours*60;
-$seconds = $duration-$hours*60*60-$minutes*60;
-$sec = number_format((float)$seconds, 2, '.', '');
-// echo "Total execution time in seconds : " . $time_elapsed_secs;
-$message = 'Proses Selesai dengan waktu ' . $sec . ' detik & ' . $count .' Data yang berhasil disimpan';
-    echo "<SCRIPT type='text/javascript'> //not showing me this
-        alert('$message');
-        window.location.replace(\"../../index.php\");
-    </SCRIPT>";
+// // mysql_close($con);
+// $time_elapsed_secs = microtime(true) - $start;
+// $duration = $time_elapsed_secs;
+// // $hours = (int)($duration/60/60);
+// // $minutes = (int)($duration/60)-$hours*60;
+// // $seconds = $duration-$hours*60*60-$minutes*60;
+// // $sec = number_format((float)$seconds, 2, '.', '');
+// // echo "Total execution time in seconds : " . $time_elapsed_secs;
+// $message = 'Proses Selesai dengan waktu ' . $duration . ' detik & ' . $count .' Data yang berhasil disimpan';
+//     echo "<SCRIPT type='text/javascript'> //not showing me this
+//         alert('$message');
+//         window.location.replace(\"../../index.php\");
+//     </SCRIPT>";
 ?>

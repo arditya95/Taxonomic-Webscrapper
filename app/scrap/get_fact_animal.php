@@ -28,9 +28,10 @@
       $sql = "SELECT * FROM tb_link WHERE id=17";
       $count=0;
       $hasil = mysqli_query($con,$sql);
-      while ($row = mysqli_fetch_array($hasil))
-       {
-         $html = file_get_html($row['info']);
+      $url="https://a-z-animals.com/animals/african-forest-elephant/";
+      // while ($row = mysqli_fetch_array($hasil))
+      //  {
+         $html = file_get_html($url);
          //AWAL BAGIAN MENGANBIL FAKTA//
          foreach($html->find('table.az-facts td') as $e)
           {
@@ -91,7 +92,7 @@
           //  //AKHIR BAGIAN MENGANBIL GAMBAR//
           //  $query = "UPDATE tb_link SET label=1 WHERE id=$row[id]";
           //  mysqli_query($con,$query);
-        }
+        // } // TODO: endloop
         // $time_elapsed_secs = microtime(true) - $start;
         // $duration = $time_elapsed_secs;
         // $hours = (int)($duration/60/60);

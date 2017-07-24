@@ -34,12 +34,12 @@ foreach($html->find('div[class=az-left-box az-animals-index] a') as $e)
     // echo "FINISH" ."<br>";
     $time_elapsed_secs = microtime(true) - $start;
     $duration = $time_elapsed_secs;
-    $hours = (int)($duration/60/60);
-    $minutes = (int)($duration/60)-$hours*60;
-    $seconds = $duration-$hours*60*60-$minutes*60;
-    $sec = number_format((float)$seconds, 2, '.', '');
+    // $hours = (int)($duration/60/60);
+    // $minutes = (int)($duration/60)-$hours*60;
+    // $seconds = $duration-$hours*60*60-$minutes*60;
+    // $sec = number_format((float)$seconds, 2, '.', '');
     // echo "Total execution time in seconds : " . $time_elapsed_secs;
-    $message = 'Proses Selesai dengan waktu ' . $sec . ' detik & ' . $count .' Data yang berhasil disimpan';
+    $message = 'Proses Selesai dengan waktu ' . $duration . ' detik & ' . $count .' Data yang berhasil disimpan';
         echo "<SCRIPT type='text/javascript'> //not showing me this
             alert('$message');
             window.location.replace(\"../../index.php\");
