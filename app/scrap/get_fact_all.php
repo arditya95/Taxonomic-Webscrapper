@@ -96,6 +96,7 @@
                  mysqli_query($con,$querya);
                 }
               }
+              //AKHIR BAGIAN MENGANBIL GAMBAR//
           }
 
           // TODO: GET FACT www.catalogueoflife.org
@@ -178,8 +179,6 @@
               // TODO: WILAYAH
             }
           }
-
-           //AKHIR BAGIAN MENGANBIL GAMBAR//
            // TODO: update tb_link jika sudah diambil data
            $query = "UPDATE tb_link SET label=1 WHERE id=$row[id]";
            mysqli_query($con,$query);

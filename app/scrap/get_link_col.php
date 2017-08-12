@@ -179,11 +179,13 @@ foreach ($items as $item) {
                                                                   if (!empty($item7['url'])) {
                                                                     $url="http://www.catalogueoflife.org" . $item7['url'];
                                                                     // echo "[" . $url . "]<br>";
-                                                                    $query = "INSERT INTO tb_link (info) VALUES ('$url')";
-                                                                    mysqli_query($con,$query);
                                                                     $count++;
+                                                                    if ($count<=200) {
+                                                                      $query = "INSERT INTO tb_link (info) VALUES ('$url')";
+                                                                      mysqli_query($con,$query);
+                                                                    }
                                                                     // TODO: pengejekan jika data sudah 200
-                                                                    if ($count == 200) {
+                                                                    else{
                                                                       $time_elapsed_secs = microtime(true) - $start;
                                                                       $duration = $time_elapsed_secs;
                                                                       $message = 'Proses Selesai dengan waktu ' . $duration . ' detik & ' . $count .' Data yang berhasil disimpan';

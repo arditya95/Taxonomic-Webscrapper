@@ -47,7 +47,14 @@
                 <div class="col-sm-6 col-md-4">
                   <div class="thumbnail">
                     <div class="thumbnail-image" style="text-align:center;">
-                    <img src="<?php echo $row['gambar_species']; ?>" height="150" width="150" class="img-rounded" alt="Responsive image">
+                      <?php
+                      if (!Empty($row['gambar_species'])) {
+                        $gambar=$row['gambar_species'];
+                      }else {
+                        $gambar="img/no_image.jpg";
+                      }
+                       ?>
+                    <img src="<?php echo $gambar; ?>" height="150" width="150" class="img-rounded" alt="Responsive image">
                     </div>
                     <div class="caption">
                       <h3> <?= $row['nama_species']; ?> </h3>
