@@ -179,10 +179,10 @@ foreach ($items as $item) {
                                                                   if (!empty($item7['url'])) {
                                                                     $url="http://www.catalogueoflife.org" . $item7['url'];
                                                                     // echo "[" . $url . "]<br>";
-                                                                    $count++;
                                                                     if ($count<=200) {
                                                                       $query = "INSERT INTO tb_link (info) VALUES ('$url')";
                                                                       mysqli_query($con,$query);
+                                                                      $count++;
                                                                     }
                                                                     // TODO: pengejekan jika data sudah 200
                                                                     else{

@@ -15,21 +15,46 @@
               <tbody class="table table-striped table-bordered table-hover">
                 <?php
                 $query = "SELECT * FROM tb_species
-                          RIGHT JOIN tb_genus USING(id_genus)
-                          RIGHT JOIN tb_family USING(id_family)
-                          RIGHT JOIN tb_ordo USING(id_ordo)
-                          RIGHT JOIN tb_class USING(id_class)
-                          RIGHT JOIN tb_phylum USING(id_phylum)
-                          RIGHT JOIN tb_kingdom USING (id_kingdom)
-                          RIGHT JOIN tb_gambar_species USING(id_species)
-                          RIGHT JOIN tb_ciri_species USING(id_species)
-                          RIGHT JOIN tb_ciri USING(id_ciri)
+                          LEFT JOIN tb_genus USING(id_genus)
+                          LEFT JOIN tb_family USING(id_family)
+                          LEFT JOIN tb_ordo USING(id_ordo)
+                          LEFT JOIN tb_class USING(id_class)
+                          LEFT JOIN tb_phylum USING(id_phylum)
+                          LEFT JOIN tb_kingdom USING (id_kingdom)
+                          LEFT JOIN tb_gambar_species USING(id_species)
+                          LEFT JOIN tb_ciri_species USING(id_species)
+                          LEFT JOIN tb_ciri USING(id_ciri)
                           WHERE tb_species.id_species='$_GET[id]';";
                 $result = mysqli_query($con,$query);
                 $row = mysqli_fetch_array($result);
                 ?>
-                <img src="<?php echo $row['gambar_species']; ?>" class="img-rounded">
                 <?php
+                if (!Empty($row['gambar_species'])) {
+                  $gambar=$row['gambar_species'];
+                }else {
+                  $gambar="img/no_image.jpg";
+                }
+                 ?>
+                <img src="<?php echo $gambar; ?>" class="img-rounded">
+                <?php
+                if (empty($row['deskripsi_species'])) {
+                  $deskripsi="<td style='text-align:center;'>Data tidak tersedia saat ini</td>";
+                }
+                else {
+                  $deskripsi="<td style='text-align:justify;'>$row[deskripsi_species]</td>";
+                }
+                if (empty($row['ciri'])) {
+                  $ciri="";
+                }
+                else {
+                  $ciri="<td style='text-align:center;''>$row[ciri]</td>";
+                }
+                if (empty($row['keterangan_cspecies'])) {
+                  $keterangan="";
+                }
+                else {
+                  $keterangan="<td style='text-align:center;'>$row[keterangan_cspecies]</td>";
+                }
                 echo '
                 <tr>
                 <td style="text-align:center;">Kingdom</td>
@@ -61,11 +86,11 @@
                 </tr>
                 <tr>
                 <td style="text-align:center;">Deskripsi</td>
-                <td style="text-align:justify;">'.$row['deskripsi_species'].'</td>
+                '.$deskripsi.'
                 </tr>
                 <tr>
-                <td style="text-align:center;">'.$row['ciri'].'</td>
-                <td style="text-align:center;">'.$row['keterangan_cspecies'].'</td>
+                '.$ciri.'
+                '.$keterangan.'
                 </tr>
                 ';
                 ?>

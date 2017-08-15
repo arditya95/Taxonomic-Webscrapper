@@ -3,7 +3,7 @@
   $DB_HOST="localhost";
   $DB_USER="root";
   $DB_PASS="";
-  $DB_NAME="coba";
+  $DB_NAME="classify";
   date_default_timezone_set("Australia/Perth");
   $date=date("Y-m-d-H-i-s");
 

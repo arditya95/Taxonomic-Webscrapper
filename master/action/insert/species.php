@@ -19,7 +19,7 @@
               <label>Tambah Species</label>
             </div>
             <div class="panel-body">
-              <form class="form-horizontal" action="insert_species.php" method="post">
+              <form class="form-horizontal" action="insert_species.php" method="post" enctype="multipart/form-data">
                 <div class="container-fluid">
                   <div class="form-group">
                     <label for="nama">Nama Species</label>
@@ -52,6 +52,10 @@
                       $select.='</select>';
                       echo $select;
                     ?>
+                  </div>
+                  <div class="form-group">
+                    <label for="gambar">Gambar</label>
+                    <input type="file" name="gambar">
                   </div>
                 </div>
                 <input type="submit" name="submit" class="btn btn-primary" value="Save">

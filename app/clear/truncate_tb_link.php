@@ -11,6 +11,6 @@ if($sql)
 }
 else
 {
-  echo"<script language=javascript> alert ('Gagal Tambah Data');history.back();</script>";
+  echo"<script language=javascript> alert ('Proses Gagal');history.back();</script>";
 }
  ?>

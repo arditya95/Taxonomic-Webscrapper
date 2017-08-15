@@ -4,7 +4,7 @@
   $DB_HOST="localhost";
   $DB_USER="root";
   $DB_PASS="";
-  $DB_NAME="coba";
+  $DB_NAME="classify";
 
   $command = "mysql -h{$DB_HOST} -u{$DB_USER} {$DB_NAME} < $filename";
   system($command, $output);
