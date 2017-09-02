@@ -1,6 +1,6 @@
 <?php
 include_once "../../setting/koneksi.php";
-$sql="TRUNCATE TABLE `classify`.`tb_link`;";
+$sql="TRUNCATE TABLE tb_link;";
 mysqli_query($con,$sql);
 // mysql_close($con);
 if($sql)
